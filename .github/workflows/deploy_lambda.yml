@@ -1,0 +1,35 @@
+name: Deploy Lambda Function
+
+on:
+  push:
+    branches:
+      - main-lambda  # Trigger the workflow on push to the main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest  # Set the runner to Ubuntu
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # Checks out your repository under $GITHUB_WORKSPACE
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'  # Set this to the Node.js version you are using
+
+    - name: Install dependencies
+      run: npm install  # Install dependencies defined in package.json
+
+    - name: Zip Lambda function
+      run: zip -r function.zip .  # Zip all files in the project directory including node_modules
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}  # Set up your AWS credentials as secrets
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-2
+
+    - name: Deploy to AWS Lambda
+      run: aws lambda update-function-code --function-name arn:aws:lambda:us-east-2:637423434940:function:HelloWorldFunction --zip-file fileb://function.zip
