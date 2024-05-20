@@ -1,0 +1,14 @@
+{
+  "name": "lambda-openai-chatbot",
+  "version": "1.0.0",
+  "description": "A Lambda function to handle requests and interact with OpenAI's API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "openai": "^2.0.1" 
+  },
+  "author": "",
+  "license": "ISC"
+}

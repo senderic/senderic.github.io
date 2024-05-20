@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #chat-box { width: 300px; height: 400px; border: 1px solid black; margin: 20px; padding: 10px; overflow-y: scroll; }
+        #user-input { width: 280px; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Chatbot</h1>
+    <div id="chat-box"></div>
+    <input type="text" id="user-input" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        function sendMessage() {
+            const chatBox = document.getElementById('chat-box');
+            const userInput = document.getElementById('user-input');
+            const message = userInput.value;
+            userInput.value = '';  // Clear input field
+
+            // Display user message
+            chatBox.innerHTML += '<div>User: ' + message + '</div>';
+
+            // Send a POST request to the chatbot backend
+            fetch('https://aws.ericsender.com/hello', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'  // Ensuring the content type is set to application/json
+                },
+                body: JSON.stringify({ message: message })  // Send the user message in the request body
+            })
+            .then(response => response.json())  // Parse the JSON response from the server
+            .then(data => {
+                // Display the bot response
+                chatBox.innerHTML += '<div>Bot: ' + data.reply + '</div>';
+                chatBox.scrollTop = chatBox.scrollHeight;  // Scroll to bottom
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                chatBox.innerHTML += '<div>Bot: Error fetching response</div>';
+            });
+
+        }
+    </script>
+</body>
+</html>
