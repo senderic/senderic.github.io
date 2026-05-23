@@ -168,8 +168,8 @@ Third, dinner should be planned around the speakeasy steak happy hour at Cleaver
 Fourth, craps sessions should be kept at off-Strip or Downtown venues. Playing at Ellis Island ($5 minimum, 10x odds) or the Rio ($3 minimum between 3 AM and 3 PM) keeps capital in play longer, lowers financial risk, and utilizes player-favorable math.  
 Finally, the group should secure an all-inclusive afternoon package at Atomic Golf ($49 Happy Hour or $89 Gold), giving them two hours of reserved play with unlimited food and beer, seltzers, and cocktails at a highly predictable, flat rate. When watching sports—especially the high-stakes Raiders vs. Chiefs game on Sunday, October 4—the group should reserve seats at Circa’s massive sportsbook well in advance to ensure a world-class viewing experience. By coordinating around the major fall 2026 conventions, this strategic blueprint ensures an exceptional, cost-effective trip for the group.27
 
-Code snippet  
-gantt  
+```mermaid
+gantt
     title Las Vegas 2026 Trip Timeline (Late Sept / Early Oct)  
     dateFormat  YYYY-MM-DD  
     section Pre-Trip Planning  
@@ -181,6 +181,7 @@ gantt
     Atomic Golf Session :2026-10-01, 1d  
     Craps at Ellis Island :2026-10-02, 1d  
     Watch Raiders vs Chiefs at Circa :2026-10-04, 1d
+```
 
 #### **Works cited**
 
