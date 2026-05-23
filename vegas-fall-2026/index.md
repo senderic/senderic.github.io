@@ -225,3 +225,18 @@ gantt
 38. Las Vegas Concerts October 2026, accessed May 23, 2026, [https://concerts.vegas/october/](https://concerts.vegas/october/)  
 39. The Best Cheap Craps Tables in Las Vegas in May 2026 \- Covers.com, accessed May 23, 2026, [https://www.covers.com/casino/vegas-chronicles/best-cheap-craps-tables](https://www.covers.com/casino/vegas-chronicles/best-cheap-craps-tables)  
 40. Las Vegas \- Private Dining for Group Events \- Ocean Prime, accessed May 23, 2026, [https://ocean-prime.com/locations-menus/las-vegas/](https://ocean-prime.com/locations-menus/las-vegas/)
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+  window.addEventListener('load', () => {
+    document.querySelectorAll('pre code.language-mermaid').forEach((el) => {
+      const pre = el.parentElement;
+      const div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = el.textContent;
+      pre.replaceWith(div);
+    });
+    mermaid.run();
+  });
+</script>
