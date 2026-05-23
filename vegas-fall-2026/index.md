@@ -5,6 +5,10 @@ title: Las Vegas Group Trip Strategy (Fall 2026)
 
 # **Las Vegas Group Trip Strategy (Fall 2026\)**
 
+<button id="theme-toggle" style="position: fixed; top: 20px; right: 20px; z-index: 9999; padding: 10px 16px; cursor: pointer; border-radius: 8px; border: 1px solid #888; font-family: sans-serif; background: #fff; color: #000; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+  🌓 Toggle Theme
+</button>
+
 ## **Table of Contents**
 
 * [Part I: Standalone Executive Summary & Action Checklist](#part-i-standalone-executive-summary--action-checklist)
@@ -226,9 +230,51 @@ gantt
 39. The Best Cheap Craps Tables in Las Vegas in May 2026 \- Covers.com, accessed May 23, 2026, [https://www.covers.com/casino/vegas-chronicles/best-cheap-craps-tables](https://www.covers.com/casino/vegas-chronicles/best-cheap-craps-tables)  
 40. Las Vegas \- Private Dining for Group Events \- Ocean Prime, accessed May 23, 2026, [https://ocean-prime.com/locations-menus/las-vegas/](https://ocean-prime.com/locations-menus/las-vegas/)
 
+<style>
+  :root { color-scheme: light dark; }
+  body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  .dark-mode a { color: #8ab4f8 !important; }
+  .dark-mode table { border-collapse: collapse; width: 100%; border: 1px solid #444 !important; background-color: #121212 !important; }
+  .dark-mode th { background-color: #333 !important; color: #fff !important; border: 1px solid #444 !important; padding: 10px; }
+  .dark-mode td { border: 1px solid #333 !important; padding: 8px; color: #e0e0e0 !important; }
+  .dark-mode tr:nth-child(even) { background-color: #1e1e1e !important; }
+  .dark-mode tr:nth-child(odd) { background-color: #121212 !important; }
+  .dark-mode blockquote { border-left: 4px solid #444; color: #aaa; }
+  #theme-toggle:hover { transform: scale(1.05); }
+  .dark-mode #theme-toggle { background: #222; color: #fff; border-color: #666; }
+</style>
+
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true });
+
+  const toggleBtn = document.getElementById('theme-toggle');
+  const storageKey = 'theme-preference';
+
+  const getTheme = () => {
+    const saved = localStorage.getItem(storageKey);
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  };
+
+  let currentTheme = getTheme();
+  if (currentTheme === 'dark') document.body.classList.add('dark-mode');
+
+  toggleBtn.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark-mode');
+    localStorage.setItem(storageKey, isDark ? 'dark' : 'light');
+    // Reload to refresh Mermaid diagrams with the correct theme
+    window.location.reload();
+  });
+
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  mermaid.initialize({ 
+    startOnLoad: true,
+    theme: isDarkMode ? 'dark' : 'default'
+  });
+
   window.addEventListener('load', () => {
     document.querySelectorAll('pre code.language-mermaid').forEach((el) => {
       const pre = el.parentElement;
