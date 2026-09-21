@@ -113,24 +113,25 @@ title: Las Vegas Group Trip Strategy (Fall 2026)
 
 ---
 
+## All-You-Can-Eat Wagyu
+
+Vegas has a legit AYCE wagyu scene — almost all of it on Spring Mountain Rd in Chinatown (~15 min rideshare from downtown). Great "one big meal" move for the group; prices below are the tiers you'll see advertised, so confirm before you go.
+
+- **Mikiya Wagyu Shabu House** (3930 Spring Mountain Rd, Chinatown) — all-you-can-eat wagyu *shabu* (hot pot), the first of its kind in SoCal and now in Vegas. Three tiers, roughly **$45 / $55 / $78 per person**, covering domestic, Australian, and Japanese A5 wagyu. The $55 tier is the sweet spot reviewers keep calling out ("$55 pp for non-members and totally worth it"). Pick two broths from sukiyaki, ponzu, spicy miso, or Japanese tomato.
+- **Chubby Cattle BBQ** (4525 Spring Mountain Rd, Chinatown) — all-you-can-eat *yakiniku* (tabletop grill) with A5 wagyu short rib, A5 sirloin, wagyu nigiri, plus sushi, sides, and dessert. Tiers roughly **$58 / $78 / $88 per person** (non-member). Reviews rave about meat quality ("unmatched," "pure perfection"). Robot-served, iPad ordering, lively room — fun with a group.
+- **Master Kim's Wagyu House** (Palace Station) — the elevated version of the popular Master Kim's Korean BBQ brand, right in a casino. **Signature Wagyu Experience: $69/person** for AYCE wagyu grilled at the table with banchan (90-minute limit). Good pick if you want the AYCE wagyu experience without leaving casino territory.
+- **Gangnam Asian BBQ** (4480 Paradise Rd, near the Strip) — Korean-Japanese AYCE BBQ with A5 wagyu and Kobe cuts plus lobster tail, sushi, and carpaccio, at moderate pricing. **4.7 stars on ~280 reviews** — one of the best-reviewed AYCE rooms in town and closest to the Strip.
+
+**Value math:** a single high-quality wagyu steakhouse dinner easily runs $100+ per person; these rooms get you unlimited A5-tier beef plus sides for $45–$88. If the group does one splurge meal, this is the highest-value version of it.
+
+---
+
 ## Other Ideas
 
 - **SlotZilla zipline** — fly under the Fremont canopy. Fun, quick, photo-worthy.
 - **NASCAR weekend** — Xfinity race Sat 4:30 pm, Cup race Sun 2:30 pm at Las Vegas Motor Speedway (~15 min north). Tickets on Ticketmaster.
 - **Raised By Wolves** (Neonopolis) — $30 open-bar party Thu–Sun. Could be a fun Saturday move.
 - **Red Rock Canyon** — ~25 min drive, scenic loop, easy hikes. Only if someone's feeling outdoorsy.
-
----
-
-## What Changed in This Audit (Sept 21, 2026)
-
-- **Park on Fremont:** corrected — Fri–Sun 4–6 pm (not M–F), $5 drafts/$7 wells (not $3/$4).
-- **Golden Gate:** verified on the casino's own site — 4 pm check-in, wristband + free-play voucher, open bar 6–7 pm, no purchase required. **Correction:** Golden Gate removed live table games in 2025 (electronic only) — cheap *live* tables are El Cortez's game.
-- **Added:** Emo Night at Golden Gate (Sat Oct 3), Raiders vs. Chiefs (Sun Oct 4 1:25 pm), NASCAR weekend, Lee Canyon Oktoberfest (Sat Oct 3, free), Oscar's, Hash House, Bin 702, ShowBar late-night, Carson Kitchen, Taco Escobar, Le Thai Saturday deals, Oak & Ivy, open-container rules.
-- **Triple 7 Brewpub:** dropped the old "11 pm–2 am late-night happy hour" claim — current sources only confirm $6–$7.50 craft beers all day; ask at the bar.
-- **Ellis Island:** $9.99 steak requires players card + kiosk coupon (not automatic); steak & eggs is now $12.99.
-
-*Prices and hours verified Sept 2026 — confirm anything time-sensitive (show lineups, exact happy hour times) before the trip.*
 
 <style>
   :root { color-scheme: light dark; }
