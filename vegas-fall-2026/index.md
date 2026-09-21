@@ -9,21 +9,22 @@ title: Las Vegas Group Trip Strategy (Fall 2026)
   🌓 Toggle Theme
 </button>
 
-
 ## Downtown / Fremont Street Focus
 
 **The crew:** 5–6 guys, late 30s / early 40s, married dads. Guys' trip.
 **The vibe:** Eat well, happy hours, good deals, laugh hard. No bottle-service energy required.
 **Getting there:** Flight WN 1686 lands LAS Fri Oct 2 at 1:05 pm. Flight WN 2394 departs Mon Oct 5 at 1:50 pm.
 
+⚠️ **Heads-up on the weekend:** Oct 2–4 is a *stacked* sports weekend in town — **NASCAR races at the speedway** (Xfinity Sat 4:30 pm, Cup race Sun 2:30 pm) and **Raiders vs. Chiefs at Allegiant Stadium Sun 1:25 pm**. That means busier casinos, pricier Stadium Swim, and better sportsbook energy. Also **Emo Night at Golden Gate on Sat Oct 3**. Plan around it, don't fight it.
+
 ---
 
 ## Book Before the Trip (Action Checklist)
 
-- [ ] **Neon Museum evening tour** — after-dark slots sell out. Book at neonmuseum.org. Night guided tour ~$28/person, daytime ~$20. Best paired with dinner on Sat Oct 3 or Sun Oct 4.
-- [ ] **Comedy show tickets** — pick one from the list below and book online (shows are Thu–Sun, so Fri/Sat/Sun all work).
-- [ ] **Atomic Golf all-inclusive package** — reserve a private bay for the group. Weekend all-inclusive packages: Silver ~$69, Gold ~$89, Platinum ~$99 per person (2 hrs golf + unlimited food & drinks). The $49 Happy Hour Unlimited is **Mon–Thu only**, so it doesn't apply to this trip's days.
-- [ ] **Stadium Swim** — check Circa's site for GA day passes closer to the date. Prices are dynamic ($25–$100+ depending on day/events). Saturday Oct 3 = college football day = fun but potentially pricier.
+- [ ] **Neon Museum evening tour** — timed entry, evening slots sell out. Book at neonmuseum.org. ~$20 daytime, ~$28 evening guided tour, ~$23 for the *Brilliant!* light show. Sept–Oct hours: 3–11 pm, last admission 10 pm.
+- [ ] **Comedy show tickets** — pick one from the list below and book online. Fri/Sat/Sun all have options.
+- [ ] **Atomic Golf all-inclusive package** — reserve a private bay for the group. Weekend all-inclusive: Silver ~$69, Gold ~$89, Platinum ~$99/person (2 hrs golf + unlimited food & drinks). The $49 Happy Hour Unlimited is **Mon–Thu only** — not available this trip.
+- [ ] **Stadium Swim** — book GA day passes on circalasvegas.com closer to the date. Dynamic pricing (~$25 base, higher on event weekends — and this is an event weekend).
 - [ ] **Mob Museum** — tickets at the door or online; ~2 hrs downtown, easy to fit in.
 
 ---
@@ -33,20 +34,20 @@ title: Las Vegas Group Trip Strategy (Fall 2026)
 ### Friday Oct 2 — Arrive & hit Fremont
 - Land 1:05 pm, check in, settle.
 - Evening: first walk down the **Fremont Street Experience** canopy (light show runs every night, free).
-- **6–7 pm: Golden Gate "The Night Starts Here"** — free drinks at Bar Prohibition with a player's card (free to sign up). Show up early for a wristband; they also hand out mystery free-play envelopes. This is the single best free deal downtown.
-- Cheap tables after: **El Cortez** or **Golden Gate** ($5–$10 blackjack/craps vs. $15–$25+ on the Strip).
-- Late night: comedy show or Fremont bar crawl.
+- **6–7 pm: Golden Gate "The Night Starts Here"** — open bar at Bar Prohibition! plus a mystery free-play envelope ($5–$1,000) with a free Club One player's card. Check in at the Club One desk from **4 pm** to get a wristband; no gambling or purchase required. This is the single best deal downtown. (Note: Golden Gate replaced live table games with electronic ones in 2025.)
+- Cheap live tables: **El Cortez** ($5–$10 blackjack/craps vs. $15–$25+ on the Strip).
+- Late night: comedy show or Fremont bar crawl. **Breaking Benjamin** plays Michelob ULTRA Arena at 6 pm if any metalheads in the group.
 
 ### Saturday Oct 3 — The Big Day
-- **Daytime:** Stadium Swim at Circa (college football on the giant screen, swim-up bars) — or Golden Nugget pool (shark-tank slide).
-- **Afternoon happy hours** (Sat is thin for weekday-only deals; these run daily): Gold Spike 4–6 pm ($5 wells/drafts), Golden Gate free drinks 6–7 pm, Triple 7 Brewpub late-night 11 pm–2 am ($2.50 microbrews).
+- **Daytime options:** Stadium Swim at Circa (college football + NASCAR on the giant screen, swim-up bars) — or free **Oktoberfest at Lee Canyon** (9 am–4 pm, live music, costume contest, seasonal beers; ~45 min drive up the mountain).
+- **Happy hours** (weekend-friendly, see cheat sheet): Bin 702 3–6 pm, Hash House 3–6 pm, Gold Spike 4–6 pm, Park on Fremont 4–6 pm, Starlight Plaza 5–7 pm ($5 cocktails), Oscar's 5–7 pm, then Golden Gate free drinks 6–7 pm.
 - **Evening:** Neon Museum after-dark tour (booked ahead), then dinner.
-- **Mob Museum** fits nicely before the Neon Museum if you want a museum double-header (they're near each other).
+- **Night:** **Emo Night at Golden Gate** (official edition of The Night Starts Here) — live emo DJ, temporary tattoos, costume contest. Extremely on-brand for late-30s/early-40s dads.
 
-### Sunday Oct 4 — NFL + Silly Stuff
-- **Afternoon:** Atomic Golf all-inclusive (Silver/Gold) — 2 hrs, unlimited food & drinks, zero golf skill needed. Great for a group of dads.
-- Or: NFL Sunday at **Circa's sportsbook** (world's biggest) — book/reserve seats early for a group this size.
-- **Evening:** comedy show night — Delirious 7 pm, Mike Hammer 7 pm, or Hypnosis Unleashed 9 pm.
+### Sunday Oct 4 — NFL Sunday
+- **Raiders vs. Chiefs, 1:25 pm.** Options: try for tickets (pricey, divisional game), or watch at **Circa's sportsbook** — the world's biggest, built for exactly this. Get there early; NASCAR Cup race also runs at 2:30 pm.
+- Alternative afternoon: Atomic Golf all-inclusive (Silver/Gold), Mob Museum, or Red Rock Canyon drive.
+- **Evening:** comedy show — Delirious 7 pm (Sun = 7 pm only, no 9 pm show), Mike Hammer 7 pm, or Hypnosis Unleashed 9 pm.
 
 ### Monday Oct 5 — Head Home
 - Easy brunch, Container Park coffee/stroll, airport for 1:50 pm flight.
@@ -55,68 +56,135 @@ title: Las Vegas Group Trip Strategy (Fall 2026)
 
 ## Comedy Shows (All Downtown — No Strip Needed)
 
-| Show | Where | When | Why it's right |
+| Show | Where | When | Price/schedule notes |
 |---|---|---|---|
-| **Delirious Comedy Club** | Hennessey's Tavern, Fremont St | Thu–Sun, 7 & 9 pm | ~$40 tickets, great drink prices, easy-bites food during show. Fri Oct 2, Sat Oct 3, Sun Oct 4 all available. |
-| **Mike Hammer Comedy Magic** | Four Queens, 202 Fremont St | Tue–Sat, 7 pm, 75 min | 4.9★. Rapid-fire jokes + mind-reading + razor-blade swallowing. High-energy guys'-trip energy. |
-| **Hypnosis Unleashed** | Four Queens | Tue–Sat, 9 pm | Comedy hypnosis with audience volunteers — funnier when your buddy is on stage. |
+| **Delirious Comedy Club** | Hennessey's Tavern, 425 Fremont St | Wed–Sun 7 pm; Fri & Sat also 9 pm | Tickets from ~$20 with code **FRIEND** on deliriouscomedyclub.com; full bar + food in the showroom |
+| **Mike Hammer Comedy Magic** | Four Queens, 202 Fremont St | Tue–Sat 7 pm, ~70 min | 4.8★ on 1,500+ TripAdvisor reviews. Rapid-fire jokes + mind-reading + razor-blade swallowing. |
+| **Hypnosis Unleashed** | Four Queens | Tue–Sat 9 pm | Comedy hypnosis from $34+tax. Volunteer on stage — funnier when it's your buddy. |
 | **Downtown Comedy Lounge** | Notoriety, 450 Fremont St | Fri/Sat nights | Intimate downtown room, group-friendly pricing. |
-| **Gordie Brown** | Golden Nugget | Thu & Sat, 7:30 pm | Vegas impressionist veteran, classic showroom act. |
-
-If you want a bigger-name splurge: **Jimmy Kimmel's Comedy Club** at the LINQ (Strip) has name acts most weekends.
+| **Gordie Brown** | Golden Nugget Showroom | Thu & Sat 7:30 pm | Vegas impressionist veteran. **Sat Oct 3 confirmed** (page notes a one-off dark date Oct 22, not Oct 3). |
 
 ---
 
 ## Happy Hour Cheat Sheet (Downtown)
 
-Most downtown happy hours are weekday-only — plan around the daily ones since we're there Fri–Sun:
+**Weekend-friendly deals (Fri–Sun) — verified Sept 2026:**
 
 | Spot | Deal | Days/times |
 |---|---|---|
-| **Golden Gate — Bar Prohibition** | **FREE drinks + free-play envelopes** | Daily 6–7 pm (player's card required, arrive early) |
+| **Golden Gate — Bar Prohibition** | **FREE drinks + free-play envelope** | Daily 6–7 pm. Club One card (free), check in from 4 pm for wristband. No purchase needed. |
 | **Gold Spike** | $5 wells, $5 drafts, $7 shots | Daily 4–6 pm (and 4–6 am, if you're still up) |
-| **Main St Station — Triple 7 Brewpub** | $2.50 microbrews/wells/wine, $3–$7 apps | Mon–Fri 3–6 pm AND 11 pm–2 am (late-night counts for Fri/Sat!) |
+| **Bin 702** (Container Park) | $5 local pints, $6 wells, $7 wine | Daily 3–6 pm |
+| **Hash House a Go Go** (Plaza) | $5 domestic beer, $7 imported, $8 call cocktails | Daily 3–6 pm |
+| **El Cortez — ShowBar** | $10 beer + shot combos, $10 cocktails | Daily 3–6 pm *and* midnight–3 am |
+| **Park on Fremont** | $5 drafts, $7 wells & wine, $9 cocktail of the day, 2-for-$15 Happy Dad seltzers | Mon–Thu 5–7 pm; **Fri–Sun 4–6 pm** |
+| **Oscar's** (Plaza) | $5 domestic bottles, $8 wells, $9 wine, discounted bites | Weekdays 5–10 pm; **Fri–Sun 5–7 pm**. Overlooks Fremont. |
 | **The White Whale** | Happy hour specials | Daily 4–6 pm |
-| **Pizza Rock** (Downtown Grand) | $5 25 oz PBR, $9 cocktails, $15 pint + shot | Mon–Thu 3–6 pm (weekday only) |
-| **Triple George** (Downtown Grand) | $5 beer, $6 wine, $10 martinis, $7 mules | Mon–Fri 3–6 pm, bar only (Fri Oct 2 works!) |
-| **Hennessey's Tavern** | $7 23 oz Coors Light, $9 craft cocktails | Mon–Fri 4–7 pm (Fri Oct 2 works!) |
-| **Park on Fremont** | $3 wells, $4 draft, $5 crafts, $6 apps | Mon–Fri 4–7 pm (Fri Oct 2 works!) |
-| **Mickie Finnz** | $7 22 oz Coors Light, $7 margaritas | Mon–Fri 4–7 pm (Fri Oct 2 works!) |
-| **Starlight Plaza** (next to Mob Museum) | $5 cocktails (Singapore Sling, Kir Royale) | Thu–Sat 5–7 pm — perfect Sat pre-Neon Museum stop |
+| **Starlight Plaza** (next to Mob Museum) | $5 cocktails (Singapore Sling, Kir Royale) | Thu–Sun 5–7 pm |
+| **Downtown Grand casino cart** | **Hot dog + 12 oz PBR for $3** | Ongoing (not timed HH — a legend) |
+| **Oak & Ivy** (Container Park) | $6 drafts, $7 wells, $8 barrel-aged cocktails | Sun–Fri 3–6 pm (Fri Oct 2 works) |
+| **Le Thai** | Sat 11:30 am–4 pm: $5 mimosas, 20% off wine | Saturdays only |
 
-**Strategy:** Fri Oct 2 arrival day is the best happy-hour day (all the weekday deals still count + Golden Gate free drinks). Sat/Sun lean on Gold Spike, Golden Gate 6–7 pm, White Whale, Starlight Plaza, and Triple 7's late-night 11 pm–2 am session.
+**Friday Oct 2 only (weekday deals):**
+
+| Spot | Deal | Time |
+|---|---|---|
+| **Triple George** (Downtown Grand) | $5 beer, $6 wine, $10 martinis, $7 mules, discounted bites | M–F 3–6 pm, bar only |
+| **Hennessey's Tavern** | $7 23 oz Coors Light, $9 craft cocktails, $8 snacks | M–F 4–7 pm |
+| **Mickie Finnz** | $7 22 oz Coors Light, $7 tropical drinks | M–F 4–7 pm |
+| **Carson Kitchen** | $5 beer, $6 wells, $8 wine, discounted bites | M–F 3–5 pm, bar only |
+| **Pizza Rock** (Downtown Grand) | $5 25 oz PBR, $9 cocktails, $15 pint + shot | Mon–Thu only — *misses this trip* |
+| **Downtown Terrace** (Container Park) | $12 all-you-can-drink "Power Hour" w/ $15+ food order | M–F 6–7 pm |
+
+**Strategy:** Fri Oct 2 is the best deals day (weekday HHs + Golden Gate free drinks). Sat/Sun lean on the daily list above. **Open-container note:** downtown technically requires drinks bought from a Fremont bar in a plastic cup — grab-and-go bar drinks are fine, cracking open a store can is not (in practice, keep it low-key).
 
 ---
 
 ## Eating Well on the Cheap
 
 - **Tacos El Gordo** — legendary cheap tacos, open late.
-- **Pizza Rock** — widely rated best pizza in Vegas; hit the weekday happy hour if you can.
 - **Nacho Daddy** — downtown staple, giant portions.
-- **Carson Kitchen** — a step up, still reasonable, good for a group dinner.
-- **Lotus of Siam** (just off Fremont) — the one "real" dinner if you want to splurge a little. Famous for a reason.
-- **Downtown Grand casino cart** — hot dog + 12 oz PBR for $3. A legend.
-- **Container Park** — food stalls + the fire-breathing praying mantis sculpture. Good afternoon stop.
+- **Carson Kitchen** — a step up, still reasonable, good for a group dinner (Fri happy hour 3–5 pm).
+- **Lotus of Siam** (just off Fremont) — the one "real" dinner if you want to splurge a little.
+- **Taco Escobar** (Fremont East) — $20 all-you-can-eat tacos, daily 3–6 pm.
+- **Le Thai** — downtown favorite, good food, Sat 11:30 am–4 pm drink deals.
+- **Ellis Island** (off-Strip, Koval Ln) — $5 blackjack 24/7, 10x-odds craps, and the famous steak special: **$9.99 with Passport players card + kiosk coupon** (play $5 through a machine for the coupon; $15.99 retail without). Worth one pilgrimage for the deal hunters.
+- **Container Park** — food stalls + the fire-breathing praying mantis sculpture.
 
 ---
 
-## Other Ideas Worth a Slot
+## Other Ideas
 
 - **SlotZilla zipline** — fly under the Fremont canopy. Fun, quick, photo-worthy.
+- **NASCAR weekend** — Xfinity race Sat 4:30 pm, Cup race Sun 2:30 pm at Las Vegas Motor Speedway (~15 min north). Tickets on Ticketmaster.
+- **Raised By Wolves** (Neonopolis) — $30 open-bar party Thu–Sun. Could be a fun Saturday move.
 - **Red Rock Canyon** — ~25 min drive, scenic loop, easy hikes. Only if someone's feeling outdoorsy.
-- **NFL Sunday at Circa** — the sportsbook is genuinely a sight; get there early.
-- **Ellis Island** (off-Strip, Koval Ln) — $5 craps, $9.99 steak special 24/7. Worth one pilgrimage for the deal hunters.
 
 ---
 
-## Sources / Verify Before Booking
+## What Changed in This Audit (Sept 21, 2026)
 
-- Neon Museum ticket prices via [Las Vegas Advisor](https://www.lasvegasadvisor.com/things-to-do/neon-museum/)
-- Delirious Comedy Club: [stayhappening listing](https://stayhappening.com/e/delirious-comedy-club-brings-hilarity-to-downtown-las-vegas-E10IF567J6V) and [Expedia](https://www.expedia.com/things-to-do/delirious-comedy-club-at-the-downtown-grand-hotel-in-las-vegas.a4495477.activity-details)
-- Mike Hammer: [mikehammershow.com](https://mikehammershow.com/) · Hypnosis Unleashed: [vegashypnosisshow.com](https://vegashypnosisshow.com/)
-- Downtown drink deals via [lasvegasthenandnow.com](https://lasvegasthenandnow.com/where-to-find-cheap-drinks-downtown-las-vegas/?fbclid=IwAR1CnECU04lR9BJls7vIdaD3BqXv5PF0ymIgmIhuNPmIt1kdniuN78ribkI&mibextid=Zxz2cZ)
-- Fremont Street happy hours via [fremontstreetexperience.com](https://fremontstreetexperience.com/downtown-insider/11-best-happy-hours-downtown-las-vegas/)
-- Atomic Golf packages via [atomicgolf.com](https://atomicgolf.com/blogs/vegas-food/best-happy-hour-spots-las-vegas)
-- Stadium Swim pricing via [exploringlasvegas.com](https://www.exploringlasvegas.com/events/event-detail.html?eventid=sswim041)
+- **Park on Fremont:** corrected — Fri–Sun 4–6 pm (not M–F), $5 drafts/$7 wells (not $3/$4).
+- **Golden Gate:** verified on the casino's own site — 4 pm check-in, wristband + free-play voucher, open bar 6–7 pm, no purchase required. **Correction:** Golden Gate removed live table games in 2025 (electronic only) — cheap *live* tables are El Cortez's game.
+- **Added:** Emo Night at Golden Gate (Sat Oct 3), Raiders vs. Chiefs (Sun Oct 4 1:25 pm), NASCAR weekend, Lee Canyon Oktoberfest (Sat Oct 3, free), Oscar's, Hash House, Bin 702, ShowBar late-night, Carson Kitchen, Taco Escobar, Le Thai Saturday deals, Oak & Ivy, open-container rules.
+- **Triple 7 Brewpub:** dropped the old "11 pm–2 am late-night happy hour" claim — current sources only confirm $6–$7.50 craft beers all day; ask at the bar.
+- **Ellis Island:** $9.99 steak requires players card + kiosk coupon (not automatic); steak & eggs is now $12.99.
 
-*Prices and hours verified Sept 2026 — confirm anything time-sensitive (show lineups, happy hour times) before the trip. The old report's Strip/Airbnb strategy has been superseded by this downtown plan.*
+*Prices and hours verified Sept 2026 — confirm anything time-sensitive (show lineups, exact happy hour times) before the trip.*
+
+<style>
+  :root { color-scheme: light dark; }
+  body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  .dark-mode a { color: #8ab4f8 !important; }
+  .dark-mode table { border-collapse: collapse; width: 100%; border: 1px solid #444 !important; background-color: #121212 !important; }
+  .dark-mode th { background-color: #333 !important; color: #fff !important; border: 1px solid #444 !important; padding: 10px; }
+  .dark-mode td { border: 1px solid #333 !important; padding: 8px; color: #e0e0e0 !important; }
+  .dark-mode tr:nth-child(even) { background-color: #1e1e1e !important; }
+  .dark-mode tr:nth-child(odd) { background-color: #121212 !important; }
+  .dark-mode blockquote { border-left: 4px solid #444; color: #aaa; }
+  #theme-toggle:hover { transform: scale(1.05); }
+  .dark-mode #theme-toggle { background: #222; color: #fff; border-color: #666; }
+</style>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+  const toggleBtn = document.getElementById('theme-toggle');
+  const storageKey = 'theme-preference';
+
+  const getTheme = () => {
+    const saved = localStorage.getItem(storageKey);
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  };
+
+  let currentTheme = getTheme();
+  if (currentTheme === 'dark') document.body.classList.add('dark-mode');
+
+  toggleBtn.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark-mode');
+    localStorage.setItem(storageKey, isDark ? 'dark' : 'light');
+    // Reload to refresh Mermaid diagrams with the correct theme
+    window.location.reload();
+  });
+
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  mermaid.initialize({ 
+    startOnLoad: true,
+    theme: isDarkMode ? 'dark' : 'default'
+  });
+
+  window.addEventListener('load', () => {
+    document.querySelectorAll('pre code.language-mermaid').forEach((el) => {
+      const pre = el.parentElement;
+      const div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = el.textContent;
+      pre.replaceWith(div);
+    });
+    mermaid.run();
+  });
+</script>
