@@ -11,9 +11,12 @@ title: Las Vegas Group Trip Strategy (Fall 2026)
 
 ## Downtown / Fremont Street Focus
 
-**The crew:** 5–6 guys, late 30s / early 40s, married dads. Guys' trip.
+**The crew:** 6 guys, late 30s / early 40s, married dads. Guys' trip.
 **The vibe:** Eat well, happy hours, good deals, laugh hard. No bottle-service energy required.
 **Getting there:** Flight WN 1686 lands LAS Fri Oct 2 at 1:05 pm. Flight WN 2394 departs Mon Oct 5 at 1:50 pm.
+**Where you're staying:** Airbnb house on the **west side** ("Luxury Vegas estate, pool, court & close to Strip" — exact address is in the Airbnb message thread). Host: Richard (and Maria). **Check-in Fri from 2:00 PM**, check-out Mon by 11:00 AM. Keypad entry (code is in the Airbnb message thread — not posted here); ADT system will be off during the stay. Posted arrival times: Carlos 2:00, Eric ~2:30, Dan 2:36, Noah 3:00, Steve 5:00 pm → Steve comes straight downtown on landing.
+
+🚗 **Transport reality check — you are NOT downtown.** The house is on the west side (The Lakes/Spring Valley area), roughly a **20–25 min drive to Fremont Street**. Nothing is walkable from the house, so budget for rideshares every evening — with 6 guys you'll want XLs — or sort out designated drivers. The consolation prize: **Chinatown (Spring Mountain Rd) is ~10 min away**, which makes the AYCE wagyu spots the easiest big dinner of the trip.
 
 ⚠️ **Heads-up on the weekend:** Oct 2–4 is a *stacked* sports weekend in town — **NASCAR races at the speedway** (Xfinity Sat 4:30 pm, Cup race Sun 2:30 pm) and **Raiders vs. Chiefs at Allegiant Stadium Sun 1:25 pm**. That means busier casinos, pricier Stadium Swim, and better sportsbook energy. Also **Emo Night at Golden Gate on Sat Oct 3**. Plan around it, don't fight it.
 
@@ -32,25 +35,29 @@ title: Las Vegas Group Trip Strategy (Fall 2026)
 ## Day-by-Day Sketch
 
 ### Friday Oct 2 — Arrive & hit Fremont
-- Land 1:05 pm, check in, settle.
+👔 **Dress code:** Travel casual → Fremont casual. Shorts and a decent shirt are perfect downtown — there is no real dress code on Fremont. Swap flip-flops for sneakers; you'll walk miles under the canopy. Bring a light layer: the casinos blast AC.
+- Land 1:05 pm. House check-in from 2:00 PM — early arrivals drop bags, then rally.
 - Evening: first walk down the **Fremont Street Experience** canopy (light show runs every night, free).
 - **6–7 pm: Golden Gate "The Night Starts Here"** — open bar at Bar Prohibition! plus a mystery free-play envelope ($5–$1,000) with a free Club One player's card. Check in at the Club One desk from **4 pm** to get a wristband; no gambling or purchase required. This is the single best deal downtown. (Note: Golden Gate replaced live table games with electronic ones in 2025.)
 - Cheap live tables: **El Cortez** ($5–$10 blackjack/craps vs. $15–$25+ on the Strip).
 - Late night: comedy show or Fremont bar crawl. **Breaking Benjamin** plays Michelob ULTRA Arena at 6 pm if any metalheads in the group.
 
 ### Saturday Oct 3 — The Big Day
-- **Daytime options:** Stadium Swim at Circa (college football + NASCAR on the giant screen, swim-up bars) — or free **Oktoberfest at Lee Canyon** (9 am–4 pm, live music, costume contest, seasonal beers; ~45 min drive up the mountain).
+👔 **Dress code:** Daytime = swimwear + sunscreen. (Circa requires proper swim attire in the pools — no denim or cutoffs.) Evening: casual + comfy walking shoes for the Neon Museum (gravel lot), then **full emo** for Emo Night at Golden Gate — black band tee, skinny jeans, eyeliner strongly encouraged. There's a costume contest. 2005 called; it wants its eyeliner back.
+- **Daytime options:** Stadium Swim at Circa (college football + NASCAR on the giant screen, swim-up bars) — or **pool day at the house** (free, no event-weekend surge pricing, BYOB from a grocery run) — or free **Oktoberfest at Lee Canyon** (9 am–4 pm, live music, costume contest, seasonal beers; ~45 min drive up the mountain; bring a hoodie, it's 20+° cooler up there).
 - **Happy hours** (weekend-friendly, see cheat sheet): Bin 702 3–6 pm, Hash House 3–6 pm, Gold Spike 4–6 pm, Park on Fremont 4–6 pm, Starlight Plaza 5–7 pm ($5 cocktails), Oscar's 5–7 pm, then Golden Gate free drinks 6–7 pm.
 - **Evening:** Neon Museum after-dark tour (booked ahead), then dinner.
 - **Night:** **Emo Night at Golden Gate** (official edition of The Night Starts Here) — live emo DJ, temporary tattoos, costume contest. Extremely on-brand for late-30s/early-40s dads.
 
 ### Sunday Oct 4 — NFL Sunday
+👔 **Dress code:** Casual + team colors — jerseys encouraged at the sportsbook. If the group does the AYCE wagyu dinner, step it up to smart casual (collared shirt / nice jeans; no swimwear or gym gear).
 - **Raiders vs. Chiefs, 1:25 pm.** Options: try for tickets (pricey, divisional game), or watch at **Circa's sportsbook** — the world's biggest, built for exactly this. Get there early; NASCAR Cup race also runs at 2:30 pm.
 - Alternative afternoon: Atomic Golf all-inclusive (Silver/Gold), Mob Museum, or Red Rock Canyon drive.
 - **Evening:** comedy show — Delirious 7 pm (Sun = 7 pm only, no 9 pm show), Mike Hammer 7 pm, or Hypnosis Unleashed 9 pm.
 
 ### Monday Oct 5 — Head Home
-- Easy brunch, Container Park coffee/stroll, airport for 1:50 pm flight.
+👔 **Dress code:** Travel casual.
+- Check out by 11:00 AM. Easy brunch near the house, then airport for the 1:50 pm flight.
 
 ---
 
@@ -124,6 +131,8 @@ Vegas has a legit AYCE wagyu scene — almost all of it on Spring Mountain Rd in
 
 **Value math:** a single high-quality wagyu steakhouse dinner easily runs $100+ per person; these rooms get you unlimited A5-tier beef plus sides for $45–$88. If the group does one splurge meal, this is the highest-value version of it.
 
+👔 **Dress code:** Smart casual — you'll fit in fine in nice jeans and a collared shirt. No swimwear, gym clothes, or flip-flops; these are sit-down dining rooms, not the pool deck.
+
 ---
 
 ## Other Ideas
@@ -132,6 +141,18 @@ Vegas has a legit AYCE wagyu scene — almost all of it on Spring Mountain Rd in
 - **NASCAR weekend** — Xfinity race Sat 4:30 pm, Cup race Sun 2:30 pm at Las Vegas Motor Speedway (~15 min north). Tickets on Ticketmaster.
 - **Raised By Wolves** (Neonopolis) — $30 open-bar party Thu–Sun. Could be a fun Saturday move.
 - **Red Rock Canyon** — ~25 min drive, scenic loop, easy hikes. Only if someone's feeling outdoorsy.
+
+---
+
+## Last-Minute Updates (Sept 30, 2026)
+
+- **Lodging locked in:** Airbnb house on the west side (address in the Airbnb thread; ~20–25 min from Fremont). Check-in Fri from 2:00 PM, checkout Mon 11:00 AM. This replaced the old "downtown hotel" assumption — every Fremont night now needs a rideshare plan (XLs for 6).
+- **Saturday pool day:** the house pool is now the value alternative to Stadium Swim's event-weekend pricing. Consider a grocery/beer run Friday.
+- **Chinatown is close:** the AYCE wagyu spots on Spring Mountain Rd are ~10 min from the house — easiest big dinner of the trip.
+- **Added dress codes** (👔) to each day above — the short version: nothing on this trip has a strict dress code except Circa's pools (real swimwear required) and your own dignity at Emo Night.
+- **Still open:** Neon Museum evening tickets (book now — they sell out), pick a comedy show, Bradley's Friday arrival time is still unknown, and reply to host Richard with the group's arrival window.
+
+*Prices and hours were verified Sept 2026 — confirm anything time-sensitive (show lineups, exact happy hour times) before the trip.*
 
 <style>
   :root { color-scheme: light dark; }
