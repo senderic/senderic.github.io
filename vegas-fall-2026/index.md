@@ -13,7 +13,7 @@ title: Las Vegas Group Trip Strategy (Fall 2026)
 
 **The crew:** 6 guys, early 40s.
 **The vibe:** Eat well, happy hours, good deals, laugh hard.
-**Getting there:** Flight WN 1686 lands LAS Fri Oct 2 at 1:05 pm. Flight WN 2394 departs Mon Oct 5 at 1:50 pm.
+**Getting there:** Flight WN 1686 departs SAN Fri Oct 2 at 1:05 pm, lands LAS 2:35 pm. Flight WN 2394 departs LAS Mon Oct 5 at 1:50 pm, lands SAN 3:15 pm.
 **Where you're staying:** Airbnb house on the **west side** ("Luxury Vegas estate, pool, court & close to Strip" — exact address is in the Airbnb message thread). Host: Richard (and Maria). **Check-in Fri from 2:00 PM**, check-out Mon by 11:00 AM. Keypad entry (code is in the Airbnb message thread — not posted here); ADT system will be off during the stay. Posted arrival times: Carlos 2:00, Eric ~2:30, Dan 2:36, Noah 3:00, Steve 5:00 pm → Steve comes straight downtown on landing.
 
 🚗 **Transport reality check — you are NOT downtown.** The house is on the west side (The Lakes/Spring Valley area), roughly a **20–25 min drive to Fremont Street**. Nothing is walkable from the house, so budget for rideshares every evening — with 6 guys you'll want XLs — or sort out designated drivers. The consolation prize: **Chinatown (Spring Mountain Rd) is ~10 min away**, which makes the AYCE wagyu spots the easiest big dinner of the trip.
@@ -36,7 +36,7 @@ title: Las Vegas Group Trip Strategy (Fall 2026)
 
 ### Friday Oct 2 — Arrive & hit Fremont
 👔 **Dress code:** Travel casual → Fremont casual. Shorts and a decent shirt are perfect downtown — there is no real dress code on Fremont. Swap flip-flops for sneakers; you'll walk miles under the canopy. Bring a light layer: the casinos blast AC.
-- Land 1:05 pm. House check-in from 2:00 PM — early arrivals drop bags, then rally.
+- Land 2:35 pm. House check-in from 2:00 PM — early arrivals drop bags, then rally.
 - Evening: first walk down the **Fremont Street Experience** canopy (light show runs every night, free).
 - **6–7 pm: Golden Gate "The Night Starts Here"** — open bar at Bar Prohibition! plus a mystery free-play envelope ($5–$1,000) with a free Club One player's card. Check in at the Club One desk from **4 pm** to get a wristband; no gambling or purchase required. This is the single best deal downtown. (Note: Golden Gate replaced live table games with electronic ones in 2025.)
 - Cheap live tables: **El Cortez** ($5–$10 blackjack/craps vs. $15–$25+ on the Strip).
