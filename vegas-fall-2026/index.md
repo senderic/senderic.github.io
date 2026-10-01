@@ -11,8 +11,8 @@ title: Las Vegas Group Trip Strategy (Fall 2026)
 
 ## Downtown / Fremont Street Focus
 
-**The crew:** 6 guys, late 30s / early 40s, married dads. Guys' trip.
-**The vibe:** Eat well, happy hours, good deals, laugh hard. No bottle-service energy required.
+**The crew:** 6 guys, early 40s.
+**The vibe:** Eat well, happy hours, good deals, laugh hard.
 **Getting there:** Flight WN 1686 lands LAS Fri Oct 2 at 1:05 pm. Flight WN 2394 departs Mon Oct 5 at 1:50 pm.
 **Where you're staying:** Airbnb house on the **west side** ("Luxury Vegas estate, pool, court & close to Strip" — exact address is in the Airbnb message thread). Host: Richard (and Maria). **Check-in Fri from 2:00 PM**, check-out Mon by 11:00 AM. Keypad entry (code is in the Airbnb message thread — not posted here); ADT system will be off during the stay. Posted arrival times: Carlos 2:00, Eric ~2:30, Dan 2:36, Noah 3:00, Steve 5:00 pm → Steve comes straight downtown on landing.
 
@@ -47,7 +47,7 @@ title: Las Vegas Group Trip Strategy (Fall 2026)
 - **Daytime options:** Stadium Swim at Circa (college football + NASCAR on the giant screen, swim-up bars) — or **pool day at the house** (free, no event-weekend surge pricing, BYOB from a grocery run) — or free **Oktoberfest at Lee Canyon** (9 am–4 pm, live music, costume contest, seasonal beers; ~45 min drive up the mountain; bring a hoodie, it's 20+° cooler up there).
 - **Happy hours** (weekend-friendly, see cheat sheet): Bin 702 3–6 pm, Hash House 3–6 pm, Gold Spike 4–6 pm, Park on Fremont 4–6 pm, Starlight Plaza 5–7 pm ($5 cocktails), Oscar's 5–7 pm, then Golden Gate free drinks 6–7 pm.
 - **Evening:** Neon Museum after-dark tour (booked ahead), then dinner.
-- **Night:** **Emo Night at Golden Gate** (official edition of The Night Starts Here) — live emo DJ, temporary tattoos, costume contest. Extremely on-brand for late-30s/early-40s dads.
+- **Night:** **Emo Night at Golden Gate** (official edition of The Night Starts Here) — live emo DJ, temporary tattoos, costume contest. Extremely on-brand.
 
 ### Sunday Oct 4 — NFL Sunday
 👔 **Dress code:** Casual + team colors — jerseys encouraged at the sportsbook. If the group does the AYCE wagyu dinner, step it up to smart casual (collared shirt / nice jeans; no swimwear or gym gear).
