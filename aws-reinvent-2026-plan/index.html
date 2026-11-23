@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>AWS re:Invent Strategy — Nov 30–Dec 4, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f1ea; --surface:#fffdf8; --surface2:#ece7da; --ink:#1a1e24; --muted:#5b6470; --line:#d8d0bf;
+  --accent:#c2410c; --accent2:#0f4c5c; --accent-soft:#fde8d8; --teal-soft:#d9ecec;
+  --warn-bg:#fff3d6; --warn-ink:#7a4a00; --warn-line:#e5c26b;
+  --good:#166534; --chip:#e8e2d3;
+  --shadow:0 10px 30px rgba(26,30,36,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#12161c; --surface:#1a2029; --surface2:#232b36; --ink:#ece8de; --muted:#a7b0bd; --line:#333d4a;
+  --accent:#fb923c; --accent2:#5ec8d8; --accent-soft:#3a2413; --teal-soft:#17363d;
+  --warn-bg:#332a12; --warn-ink:#f5cf7a; --warn-line:#6b5518; --good:#4ade80; --chip:#2a333f; --shadow:0 10px 30px rgba(0,0,0,.35);}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Archivo,system-ui,sans-serif;line-height:1.55;font-size:16px}
+a{color:var(--accent2);text-underline-offset:3px}
+button,[role="button"],select,summary{min-height:2.25rem}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px 64px}
+.mono{font-family:"IBM Plex Mono",monospace}
+h1,h2,h3{line-height:1.15;margin:0}
+h2{font-size:1.55rem;font-weight:800;letter-spacing:-.02em;margin:44px 0 6px}
+h2+p.lede{color:var(--muted);margin:0 0 18px;max-width:68ch}
+h3{font-size:1.05rem;font-weight:700}
+/* hero */
+.hero{padding:36px 0 8px;border-bottom:3px solid var(--ink)}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.hero h1{font-family:"Source Serif 4",serif;font-size:clamp(2rem,6vw,3.4rem);font-weight:600;letter-spacing:-.01em;margin:10px 0 12px;max-width:16ch}
+.hero .sub{font-size:1.08rem;color:var(--muted);max-width:62ch;margin:0 0 20px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.pill{border:1.5px solid var(--ink);border-radius:999px;padding:6px 12px;font-size:.85rem;font-weight:600;background:var(--surface)}
+.pill.hot{background:var(--ink);color:var(--bg)}
+.alert{background:var(--warn-bg);border:1.5px solid var(--warn-line);border-radius:12px;padding:16px 18px;margin:20px 0}
+.alert strong{color:var(--warn-ink)}
+.alert p{margin:6px 0 0;font-size:.95rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 4px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:1.6rem;font-weight:800;letter-spacing:-.03em}
+.stat span{font-size:.82rem;color:var(--muted);line-height:1.35;display:block;margin-top:2px}
+@media(max-width:760px){.stats{grid-template-columns:1fr 1fr}}
+/* nav */
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
+.toc a{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:.88rem;font-weight:600;text-decoration:none;color:var(--ink)}
+.toc a:hover{border-color:var(--accent);color:var(--accent)}
+/* cards & tables */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-size:.93rem}
+th{text-align:left;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:8px 10px;border-bottom:2px solid var(--ink)}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+.tablewrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+@media(max-width:700px){
+  .stack-table thead{display:none}
+  .stack-table tr{display:block;border-bottom:1px solid var(--line);padding:6px 0}
+  .stack-table td{display:block;border:none;padding:4px 12px}
+  .stack-table td:first-child{font-weight:700}
+}
+/* day lanes */
+.day{border-left:4px solid var(--accent);background:var(--surface);border-radius:0 14px 14px 0;padding:16px 18px;margin-bottom:12px;box-shadow:var(--shadow);border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.day h3{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.day h3 .when{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--accent);font-weight:600}
+.day p{margin:8px 0 0;font-size:.94rem}
+.day .alt{color:var(--muted);font-size:.9rem}
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;position:sticky;top:0;background:var(--bg);padding:12px 0;z-index:5}
+.fbtn{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 14px;font:inherit;font-size:.88rem;font-weight:600;cursor:pointer}
+.fbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.fbtn:hover{border-color:var(--accent)}
+.theme{margin:0 0 26px}
+.theme-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px}
+.theme-num{font-family:"IBM Plex Mono",monospace;background:var(--accent);color:#fff;border-radius:8px;padding:4px 9px;font-weight:600;font-size:.85rem;flex:none;margin-top:2px}
+.theme-head p{margin:4px 0 0;color:var(--muted);font-size:.92rem;max-width:70ch}
+.sess{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:760px){.sess{grid-template-columns:1fr}}
+.s{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.s .code{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:.85rem;color:var(--accent2)}
+.s .star{color:var(--accent);font-weight:800}
+.s h4{margin:3px 0 4px;font-size:.98rem;line-height:1.3}
+.s p{margin:0;font-size:.88rem;color:var(--muted)}
+.s .meta{margin-top:7px;font-size:.8rem;font-family:"IBM Plex Mono",monospace;color:var(--ink)}
+.tag{display:inline-block;background:var(--chip);border-radius:6px;padding:1px 7px;font-size:.75rem;font-weight:600;margin-right:4px}
+.tag.must{background:var(--accent-soft);color:var(--accent)}
+.tag.rec{background:var(--teal-soft);color:var(--accent2)}
+.hidden{display:none!important}
+/* steps */
+ol.steps{counter-reset:st;list-style:none;padding:0;margin:0;display:grid;gap:10px}
+ol.steps li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px 52px;position:relative;box-shadow:var(--shadow)}
+ol.steps li::before{counter-increment:st;content:counter(st);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;font-size:.9rem}
+ol.steps b{display:block;margin-bottom:2px}
+ol.steps p{margin:0;font-size:.93rem;color:var(--muted)}
+.note{font-size:.88rem;color:var(--muted)}
+.hedge{border:1px dashed var(--warn-line);background:var(--warn-bg);border-radius:12px;padding:14px 16px;font-size:.93rem}
+ul.tight{margin:8px 0;padding-left:20px}
+ul.tight li{margin:5px 0;font-size:.94rem}
+footer{margin-top:48px;border-top:2px solid var(--ink);padding-top:16px;font-size:.85rem;color:var(--muted)}
+footer li{margin:4px 0;word-break:break-word}
+.src{font-size:.8rem;color:var(--muted)}
+.catlink{display:inline-block;margin:9px 6px 0 0;font-size:.82rem;font-weight:700;text-decoration:none;border:1.5px solid var(--accent2);color:var(--accent2);border-radius:999px;padding:5px 12px}
+.catlink:hover{background:var(--teal-soft)}
+.code-link{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--accent2);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;white-space:nowrap}
+.code-link:hover{background:var(--teal-soft)}
+.guide-line{font-size:.85rem;margin-top:6px!important}
+.linknote{background:var(--teal-soft);border:1px solid var(--accent2);border-radius:12px;padding:14px 16px;margin:0 0 12px;font-size:.93rem}
+.linknote p{margin:6px 0 0}
+.infobox{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 16px;box-shadow:var(--shadow);font-size:.93rem}
+.infobox p{margin:6px 0 0}
+.infobox .mono{font-weight:600}
+/* lane swimlane charts */
+:root{--lane-mgm:#0f4c5c;--lane-mgm-bg:#d9ecec;--lane-ctr:#9a3412;--lane-ctr-bg:#fde8d8;--lane-nth:#3f4c63;--lane-nth-bg:#e2e7f0;--lane-shr:#166534;--lane-shr-bg:#dcf0e2}
+@media (prefers-color-scheme: dark){:root{--lane-mgm:#5ec8d8;--lane-mgm-bg:#17363d;--lane-ctr:#fb923c;--lane-ctr-bg:#3a2413;--lane-nth:#a9bcd8;--lane-nth-bg:#26314a;--lane-shr:#4ade80;--lane-shr-bg:#173325}}
+.lanes{margin-top:26px}
+.lanes h3{font-size:1.25rem;font-weight:800;letter-spacing:-.01em}
+.lanes .intro{color:var(--muted);font-size:.93rem;max-width:72ch;margin:6px 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.legend span{font-size:.8rem;font-weight:700;border:1.5px solid;border-radius:999px;padding:4px 11px;background:var(--surface)}
+.legend .lg-mgm{color:var(--lane-mgm);border-color:var(--lane-mgm)}
+.legend .lg-ctr{color:var(--lane-ctr);border-color:var(--lane-ctr)}
+.legend .lg-nth{color:var(--lane-nth);border-color:var(--lane-nth)}
+.legend .lg-shr{color:var(--lane-shr);border-color:var(--lane-shr)}
+.lane-day{margin:0 0 22px}
+.lane-day>h4{font-size:1rem;margin:0 0 6px}
+.lane-day>h4 .mono{font-size:.78rem;color:var(--accent);font-weight:600}
+.lane-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:var(--shadow)}
+.lane-inner{min-width:880px;padding:10px 12px 12px}
+.lane-axis{position:relative;height:20px;margin-left:168px;border-bottom:2px solid var(--ink)}
+.lane-axis i{position:absolute;top:0;transform:translateX(-50%);font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--muted);white-space:nowrap}
+.lane-axis i:first-child{transform:none}
+.lane-row{display:flex;align-items:stretch;margin-top:8px}
+.lane-label{flex:0 0 160px;margin-right:8px;font-size:.8rem;font-weight:700;line-height:1.3;padding-top:6px}
+.lane-label small{display:block;font-weight:600;color:var(--muted);font-size:.74rem;margin-top:2px}
+.lane-track{position:relative;flex:1;min-height:64px;border-radius:8px;background:repeating-linear-gradient(to right,transparent 0,transparent calc(100%/13 - 1px),var(--line) calc(100%/13 - 1px),var(--line) calc(100%/13))}
+.lane-track.tall{min-height:118px}
+.slot{position:absolute;top:4px;display:flex;flex-direction:column;gap:4px}
+.slot .pick{font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+a.blk,div.blk{display:block;text-decoration:none;color:var(--ink);border:1.5px solid;border-radius:8px;padding:5px 8px;font-size:.78rem;line-height:1.3;min-width:104px}
+a.blk:hover{outline:2px solid var(--accent);outline-offset:1px}
+.blk b{font-family:"IBM Plex Mono",monospace;font-size:.8rem}
+.blk .vt{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;border-radius:4px;padding:0 5px;margin-left:4px;vertical-align:1px}
+.blk .lv{display:inline-block;font-size:.66rem;font-weight:800;border-radius:4px;padding:0 5px;margin-left:4px;background:var(--ink);color:var(--bg);vertical-align:1px}
+.blk-mgm{border-color:var(--lane-mgm);background:var(--lane-mgm-bg)}.blk-mgm .vt{background:var(--lane-mgm);color:#fff}
+.blk-ctr{border-color:var(--lane-ctr);background:var(--lane-ctr-bg)}.blk-ctr .vt{background:var(--lane-ctr);color:#fff}
+.blk-nth{border-color:var(--lane-nth);background:var(--lane-nth-bg)}.blk-nth .vt{background:var(--lane-nth);color:#fff}
+.blk-shr{border-color:var(--lane-shr);background:var(--lane-shr-bg)}.blk-shr .vt{background:var(--lane-shr);color:#fff}
+.blk-alt{border-style:dashed;background:var(--surface)}
+.travel{position:absolute;top:50%;transform:translateY(-50%);font-size:.7rem;font-weight:800;color:var(--warn-ink);background:var(--warn-bg);border:1.5px dashed var(--warn-line);border-radius:999px;padding:3px 9px;white-space:nowrap;z-index:2}
+.or-divider{display:flex;align-items:center;gap:10px;margin:10px 0 2px 168px;font-family:"IBM Plex Mono",monospace;font-size:.75rem;font-weight:600;color:var(--accent);letter-spacing:.08em}
+.or-divider::before,.or-divider::after{content:"";flex:1;border-top:2px dashed var(--accent)}
+.lane-note{font-size:.85rem;color:var(--muted);margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Las Vegas · Mon Nov 30 – Fri Dec 4, 2026 · Based at MGM Grand</div>
+  <h1>Your re:Invent plan: win the walk-up game</h1>
+  <p class="sub">You’re past introductory AWS. This plan targets Level 300/400 interactive sessions — production Bedrock agents, GovCloud hybrid networking, document pipelines, and coding-agent governance — clustered by venue so you stop losing slots to shuttles.</p>
+  <div class="hero-meta">
+    <span class="pill hot">★ = must-book: interactive, not recorded</span>
+    <span class="pill">3–4 sessions/day is the realistic max</span>
+    <span class="pill">Researched Thu Nov 19, 2026 (PT)</span>
+  </div>
+  <div class="alert" role="note">
+    <strong>The one fact that changes everything:</strong> Reserved seating opened Oct 6. A Nov 7 catalog-API analysis (one attendee’s pull, not an AWS statement) found only <strong>13 of 1,486 reservable sessions still had seats — 1,473 were full</strong>. Don’t plan around “booking” first choices. Plan around <strong>repeats, cancellations, and walk-up lines</strong> — and favorite everything below in the catalog/app today.
+    <p>Seat availability for any specific session couldn’t be verified without a registered attendee sign-in. Assume ★ sessions are full until your own portal proves otherwise. Always re-confirm a sitting in the live catalog/app — schedules change, and new-launch sessions are added after each keynote.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>2,651</b><span>catalog listings live Nov 19 (incl. repeats, sponsored &amp; walk-up) — AWS marketing says “2,200+ sessions, 70% interactive”</span></div>
+    <div class="stat"><b>&lt;1%</b><span>of reservable sessions had any seats left on Nov 7 (13 of 1,486)</span></div>
+    <div class="stat"><b>~20%</b><span>of room capacity is never reserved — held for walk-ups, plus no-shows released at T−10 min (Storage guide)</span></div>
+    <div class="stat"><b>30+ min</b><span>MGM Grand → Venetian or Wynn/Encore by shuttle. A cross-campus move costs a full session slot</span></div>
+  </div>
+  <nav class="toc" aria-label="On this page">
+    <a href="#keynotes">Keynotes</a><a href="#days">Day-by-day lanes</a><a href="#obs-lane">Observability &amp; Gateway lane</a><a href="#s3-day-lane">S3 lane</a><a href="#lane-charts">Lanes at a glance</a><a href="#sessions">Priority sessions</a><a href="#s3-lane">S3 Tables / Observability / Metadata</a><a href="#langchain-map">LangChain → AWS equivalents</a><a href="#formats">Formats &amp; recording</a><a href="#venues">Venues &amp; travel</a><a href="#playbook">Booking playbook</a><a href="#networking">Networking &amp; extras</a><a href="#gaps">Known gaps</a>
+  </nav>
+</header>
+
+<section id="keynotes">
+  <h2>Keynotes — all at The Venetian, all walk-up</h2>
+  <p class="lede">No reservations for keynotes. From MGM Grand, budget 30+ minutes each way — a morning keynote consumes your 8:30 slot and makes an 11:30 session at Wynn or Caesars tight. Official details: <a href="https://aws.amazon.com/events/reinvent/sessions/keynotes/">aws.amazon.com/events/reinvent/sessions/keynotes</a>.</p>
+  <div class="tablewrap"><table class="stack-table">
+    <thead><tr><th>Keynote</th><th>When (PT)</th><th>Speakers / focus</th><th>Verdict for you</th></tr></thead>
+    <tbody>
+      <tr><td>Developer Keynote</td><td class="mono">Mon Nov 30, 7:30–8:45 PM</td><td>Clare Liguori, Eric Johnson, Marc Brooker, Neha Rungta — “idea to live app in minutes, build agents that work, and trust the code AI writes.” The Kiro / coding-agent keynote.</td><td><strong>Go live</strong> if coding agents are a priority — you’re already at the Venetian for the Expo Welcome Reception (4–7 PM).</td></tr>
+      <tr><td>CEO Keynote — Matt Garman</td><td class="mono">Tue Dec 1, 8:30–10:30 AM</td><td>Matt Garman + Barbara Karuth-Zelle (Allianz), Tony Xu (DoorDash), Sam Altman (OpenAI) — main launch keynote, “innovations powering the agentic era.”</td><td><strong>Go live.</strong> The week’s sessions reference its launches.</td></tr>
+      <tr><td>Data &amp; AI Keynote</td><td class="mono">Wed Dec 2, 8:30–10:00 AM</td><td>Dr. Swami Sivasubramanian + Andy Warfield, Hannes Mühleisen, Brittany Doncaster (Delta), Marianne Johnson (Cox Automotive) — “agents from demo to production.”</td><td><strong>Go live.</strong> Highest-value keynote for your doc-QA / data profile.</td></tr>
+      <tr><td>Partner Keynote</td><td class="mono">Wed Dec 2, 3:00–4:00 PM</td><td>Dr. Ruba Borno + Matt Garman, Matt Yanchyshyn, Bob Cagnazzi (Presidio), Drew Pinto (Marriott).</td><td><strong>Skip live</strong> unless partner business matters — it blocks a prime Wednesday afternoon slot. It’s recorded.</td></tr>
+      <tr><td>Technical Innovations Keynote</td><td class="mono">Thu Dec 3, 8:30–10:00 AM</td><td>Matt Wood + Amy Herzog (CISO), Colm MacCárthaigh, Ron Diamant (Trainium), Oliver Cameron (Odyssey) — “silicon to storage, built for unpredictable agentic workloads.”</td><td><strong>Watch the replay.</strong> AWS playbooks explicitly advise skipping it if you have a 9:00 MGM/Wynn session — Thursday daytime sessions are too valuable.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note" style="margin-top:10px">Note: no separate “Innovation Talks” block appears on the verified 2026 agenda page. The 2026 equivalent is the five keynotes above plus INV-coded 500-level catalog sessions (e.g. <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=INV510" target="_blank" rel="noopener">INV510</a> Inside Amazon S3, <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=INV517" target="_blank" rel="noopener">INV517</a> large-model inference, <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=INV508" target="_blank" rel="noopener">INV508</a>/<a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=INV526" target="_blank" rel="noopener">INV526</a> automated reasoning). Also note the agenda page labels all times “PDT” [sic] — Las Vegas is on PST in December; plan in PT and trust the app on the day.</p>
+</section>
+
+<section id="days">
+  <h2>Day-by-day: pick one lane per half-day</h2>
+  <p class="lede">Cluster South (MGM) / Center (Caesars) / North (Venetian–Wynn). Never schedule back-to-back sessions in different clusters. Eat at the venue of your <em>next</em> session. These are alternatives to aim at — not reservation promises. Day structure follows the <a href="https://aws.amazon.com/events/reinvent/agenda/">official agenda</a>.</p>
+
+  <div class="day"><h3>Sunday, Nov 29 <span class="when">KICKOFF · NO SESSIONS</span></h3>
+    <p><strong>Pick up your badge at MGM Grand, 10:00 AM–8:00 PM</strong> (also Venetian same hours; Harry Reid Airport T1/T3 7:00 AM–11:59 PM). Monday queues are the classic time loss. Kickoff activities and Customer Showcase run at Caesars Forum + Venetian 10 AM–6 PM if you want them; shuttles run limited service 9:30 AM–8:30 PM.</p></div>
+
+  <div class="day"><h3>Monday, Nov 30 <span class="when">SESSIONS 8:00 AM–5:30 PM · CHOOSE ONE LANE</span></h3>
+    <p><strong>South / MGM lane (recommended):</strong> <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=AIM439" target="_blank" rel="noopener">AIM439</a> AgentCore workshop (8:30, MGM) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=DAT406" target="_blank" rel="noopener">DAT406-R</a> GraphRAG or <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET305" target="_blank" rel="noopener">NET305</a> encryption controls (10:00–10:30, MGM) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=AIM418" target="_blank" rel="noopener">AIM418</a> AI software development (12:00, MGM) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=AIM429" target="_blank" rel="noopener">AIM429</a> agent inference or <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=HMC311" target="_blank" rel="noopener">HMC311</a> Outposts networking / <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET337" target="_blank" rel="noopener">NET337</a> satellite (2:30–3:00, MGM) → shuttle north for Expo Welcome Reception (4:00–7:00 PM, Venetian) + Developer Keynote (7:30 PM).</p>
+    <p class="alt"><strong>North/Center alternative:</strong> <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP406" target="_blank" rel="noopener">COP406</a> or <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=IND374" target="_blank" rel="noopener">IND374</a> coding-agent governance (Wynn, morning) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=SVS303" target="_blank" rel="noopener">SVS303</a> Kiro workshop (12:00–2:00, Caesars Palace) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP401" target="_blank" rel="noopener">COP401</a> eval-driven observability code talk (4:30, Caesars Forum). Do not try to do both lanes.</p></div>
+
+  <div class="day"><h3>Tuesday, Dec 1 <span class="when">SESSIONS 11:30 AM–5:30 PM · KEYNOTE-BLOCKED MORNING</span></h3>
+    <p>CEO Keynote (8:30, Venetian) → Expo / AWS Village late morning (you’re already in the building — this is Expo’s best slot all week) → shuttle south, lunch at MGM → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT428" target="_blank" rel="noopener">ANT428-R</a> Iceberg lakehouse chalk (1:00, MGM) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET203" target="_blank" rel="noopener">NET203</a> hybrid DNS workshop (3:30, MGM) — note <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET308" target="_blank" rel="noopener">NET308</a> at 12:00 conflicts, choose one → Networking Reception 6–8 PM (Caesars Palace is closest from MGM, ~20–25 min).</p></div>
+
+  <div class="day"><h3>Wednesday, Dec 2 <span class="when">SESSIONS 8:00 AM–5:30 PM · SKIP PARTNER KEYNOTE LIVE</span></h3>
+    <p>Data &amp; AI Keynote (8:30, Venetian) → shuttle south → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT351" target="_blank" rel="noopener">ANT351</a> or the <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT401" target="_blank" rel="noopener">ANT401</a> governance workshop (12:00, MGM) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT342" target="_blank" rel="noopener">ANT342</a> Glue Data Catalog (1:00, MGM) → the 4:00 PM MGM decision: <strong><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET327" target="_blank" rel="noopener">NET327</a> partitions</strong> (wins if GovCloud connectivity is the week’s #1 question) vs <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=DAT425" target="_blank" rel="noopener">DAT425</a> Aurora vs <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT442" target="_blank" rel="noopener">ANT442</a> OpenSearch vector search → Expo Happy Hour 4:30–6:00 (Venetian) or Networking Receptions 6–8 PM (Caesars Palace, Venetian, Wynn/Encore).</p></div>
+
+  <div class="day"><h3>Thursday, Dec 3 <span class="when">SESSIONS 8:00 AM–5:30 PM · PICK MGM OR WYNN, NOT BOTH</span></h3>
+    <p><strong>MGM lane:</strong> <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET323" target="_blank" rel="noopener">NET323</a> Route 53 (9:00) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT312" target="_blank" rel="noopener">ANT312</a> data processing (10:00) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=DAT451" target="_blank" rel="noopener">DAT451</a> Netflix on Aurora (12:00) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT303" target="_blank" rel="noopener">ANT303</a> Iceberg or <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT315" target="_blank" rel="noopener">ANT315</a> Athena cost (1:30) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=IND397" target="_blank" rel="noopener">IND397</a> prototype-to-ATO repeat (3:00; check venue in catalog) → re:Play.</p>
+    <p class="alt"><strong>Wynn security lane:</strong> skip the Technical Innovations Keynote (replay it) for the Security Focus Day at Wynn (re:Inforce folded into re:Invent 2026; ~97 SEC sessions Thursday per the Security playbook) + <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COM321" target="_blank" rel="noopener">COM321</a> regulated agent harness chalk (2:30, Wynn Chopin 2). Expo closes 4 PM Thursday — if Expo matters, do it Tue/Wed. <strong>re:Play 6:30–10:30 PM, Allegiant Stadium</strong> (shuttles 6:15–11:00 PM).</p></div>
+
+  <div class="day"><h3>Friday, Dec 4 <span class="when">HALF DAY · 8:00 AM–12:30 PM · VENETIAN + WYNN/ENCORE ONLY</span></h3>
+    <p>No MGM or Caesars sessions on Friday. Only make the north trip if a specific session justifies it — the research names <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP404" target="_blank" rel="noopener">COP404</a>, <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=DAT442" target="_blank" rel="noopener">DAT442-R2</a>, and <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COM320" target="_blank" rel="noopener">COM320</a> as examples worth checking. Otherwise, fly home rested. Shuttles run limited service 6:30 AM–1:00 PM.</p></div>
+
+  <div class="card" id="obs-lane" style="border:2px solid var(--accent2);margin:18px 0 6px">
+    <div class="theme-head" style="margin-bottom:6px"><span class="theme-num" style="background:var(--accent2)">◎</span><div><h3>Observability &amp; Gateway lane — the fitted track for LiteLLM / logging / traceability</h3><p>This is an <strong>alternative lane overlay</strong> on the days above — not an extra list on top of them. If the LiteLLM / gateway / observability stack is the priority, swap to this lane. It replaces the Monday MGM lane, reshapes Tuesday–Thursday, and drops or replays everything that clashes.</p></div></div>
+    <div class="hedge" style="margin:10px 0 14px"><strong>The rule:</strong> you cannot hit every observability session — the Monday Wynn sessions all overlap each other and several in this stack are recorded breakouts. This lane hits every <em>topic</em> — instrumentation, tracing, coding-agent telemetry, evals, gateway governance, and cost attribution — with only live-only formats in person, and pushes every recorded breakout to replay.</div>
+
+    <h3 style="font-size:.95rem;margin:12px 0 4px">Monday — North / Center observability lane <span class="note">(replaces the Mon MGM lane if this stack is priority)</span></h3>
+    <p style="margin:4px 0 0;font-size:.94rem"><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=IND374" target="_blank" rel="noopener">IND374</a> Govern AI coding agents (9:00 AM, Wynn) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP318" target="_blank" rel="noopener">COP318</a> Instrument your AI agents workshop (12:00–2:00 PM, Wynn Brahms 4) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP401" target="_blank" rel="noopener">COP401</a> eval-driven observability (4:30 PM, Caesars Forum — fits after COP318: Wynn → Caesars Forum, 2:00 → 4:30 gap) → Expo Welcome + Developer Keynote (Venetian, evening).</p>
+    <p class="alt" style="font-size:.9rem;color:var(--muted);margin:6px 0 0"><strong>Why COP318 is the Monday pick:</strong> <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP309" target="_blank" rel="noopener">COP309</a> (Builders’, Mon 1:30 PM, Wynn Latour 7) and <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP325" target="_blank" rel="noopener">COP325</a> (Chalk, Mon 1:00–2:00 PM, Wynn Latour 5) both conflict with COP318 — do <strong>not</strong> schedule them. COP318 covers the COP309 / COP325 ground hands-on in one workshop, so choosing it <em>is</em> hitting that Wynn cluster. Alternative only at 4:30 PM: <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP349" target="_blank" rel="noopener">COP349</a> per-tenant observability for Agentic SaaS (Wynn) conflicts with COP401 — pick COP401.</p>
+
+    <h3 style="font-size:.95rem;margin:14px 0 4px">Tuesday — Keynote → Expo gateways → Caesars → MGM</h3>
+    <p style="margin:4px 0 0;font-size:.94rem">CEO Keynote (8:30 AM, Venetian) → <strong>LangChain Booth #1740 + AgentCore Gateway / Bedrock kiosk in Expo</strong> (same building — this is where you cover LiteLLM, see the note in Priority Sessions) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP319" target="_blank" rel="noopener">COP319</a> Observe AI agents beyond your perimeter (1:00 PM, Caesars Forum Forum 120) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET203" target="_blank" rel="noopener">NET203</a> hybrid DNS workshop (3:30 PM, MGM — Caesars → MGM travel fits in the 2:00–3:30 gap).</p>
+    <p class="alt" style="font-size:.9rem;color:var(--muted);margin:6px 0 0"><strong>Dropped:</strong> <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT428" target="_blank" rel="noopener">ANT428-R</a> Tue 1:00 PM MGM — conflicts with COP319. <strong>Skip live, watch replay (both recorded breakouts):</strong> <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP335" target="_blank" rel="noopener">COP335</a> Evolve your observability (Tue 11:30 AM–12:30 PM, Wynn Cristal 2) and <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP304" target="_blank" rel="noopener">COP304</a> Observability and operations in the AI era (Tue 4:00–5:00 PM, Wynn Encore Ballroom 5 — also conflicts with NET203).</p>
+
+    <h3 style="font-size:.95rem;margin:14px 0 4px">Wednesday — Keynote → OPN304 → one 4 PM pick</h3>
+    <p style="margin:4px 0 0;font-size:.94rem">Data &amp; AI Keynote (8:30 AM, Venetian) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=OPN304" target="_blank" rel="noopener">OPN304</a> Strands / OpenTelemetry / Langfuse (12:30–2:30 PM, Caesars Forum, already in plan) → <strong>4:00 PM pick one:</strong> <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP402" target="_blank" rel="noopener">COP402</a> Scaling operations with MCP, ACP, and A2A (Caesars Palace Neopolitan I — 5–10 min walk, the gateway / MCP pick) <em>or</em> <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET327" target="_blank" rel="noopener">NET327</a> partitions (MGM — the GovCloud pick, one shuttle). You cannot do both.</p>
+    <p class="alt" style="font-size:.9rem;color:var(--muted);margin:6px 0 0"><strong>Skip live:</strong> <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP337" target="_blank" rel="noopener">COP337</a> Wrong, Not Broken (Wed 12:00–1:00 PM, Wynn Cristal 2) — recorded breakout, conflicts with OPN304; replay it. Optional extra if you stay North: <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=INV521" target="_blank" rel="noopener">INV521</a> Teaching Telemetry to Think (Chalk, Wed 1:00–2:00 PM, Wynn Latour 5) — only if you give up OPN304 that day.</p>
+
+    <h3 style="font-size:.95rem;margin:14px 0 4px">Thursday — Wynn observability lane</h3>
+    <p style="margin:4px 0 0;font-size:.94rem"><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP340" target="_blank" rel="noopener">COP340</a> Observability strategy in the age of AI (8:30–9:30 AM, Caesars Forum Academy 409) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP407" target="_blank" rel="noopener">COP407</a> Build-time context for agentic incident response (10:30–11:30 AM, Wynn Margaux 1) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COM321" target="_blank" rel="noopener">COM321</a> regulated agent harness (2:30 PM, Wynn, existing plan) → re:Play.</p>
+    <p class="alt" style="font-size:.9rem;color:var(--muted);margin:6px 0 0"><strong>Replay, don’t attend live:</strong> <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=OPN301" target="_blank" rel="noopener">OPN301</a> Governing AI assets with MCP Gateway and Registry (Thu 3:00–4:00 PM, Caesars Forum) is a recorded Breakout 300 and conflicts with COM321 — COM321 stays the live pick, OPN301 is your gateway-governance replay.</p>
+  </div>
+
+  <div class="card" id="s3-day-lane" style="border:2px solid var(--accent);margin:18px 0 6px">
+    <div class="theme-head" style="margin-bottom:6px"><span class="theme-num">S3</span><div><h3>S3 lane — Tables, observability &amp; Metadata for a batch workload</h3><p>Your processing is <strong>batch, not real-time and not speed-constrained</strong> — the bar is reasonably fast and stable, so this lane is about best use of S3, not streaming or performance engineering. Full cards are in <a href="#s3-lane">Priority Sessions → S3 Tables / S3 Observability / S3 Metadata</a>.</p></div></div>
+    <div class="hedge" style="margin:10px 0 14px"><strong>The stack this points to:</strong> S3 Tables managed Iceberg for the tabular data + plain S3 for the raw objects + Athena for batch query + S3 Metadata for discovery / provenance — and let S3 Tables automate compaction and maintenance instead of running your own EMR / Glue jobs.</div>
+
+    <h3 style="font-size:.95rem;margin:12px 0 4px">Thursday — the pick: Wynn observability lane <em>or</em> MGM S3 / analytics lane</h3>
+    <p style="margin:4px 0 0;font-size:.94rem"><strong>MGM S3 lane (new):</strong> <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG306" target="_blank" rel="noopener">STG306</a> S3 Tables deep dive (10:30–11:30 AM, MGM Grand) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT320" target="_blank" rel="noopener">ANT320-R</a> Data mesh: governance, identity &amp; end-user attribution (11:30 AM, MGM) → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT303" target="_blank" rel="noopener">ANT303</a> open lakehouse on Iceberg <em>or</em> <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT315" target="_blank" rel="noopener">ANT315</a> advanced Athena optimization &amp; cost (1:30 PM, MGM — pick one) → re:Play.</p>
+    <p class="alt" style="font-size:.9rem;color:var(--muted);margin:6px 0 0"><strong>⚠ Direct conflict:</strong> <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP407" target="_blank" rel="noopener">COP407</a> (Thu 10:30 AM, Wynn) in the Thursday Wynn observability lane (<a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP340" target="_blank" rel="noopener">COP340</a> 8:30 AM Caesars Forum → COP407 → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COM321" target="_blank" rel="noopener">COM321</a>) sits at exactly the same time as STG306. Thursday is a straight either/or — you cannot do both lanes. Note STG306 is a Breakout 300, so it is recorded: if you choose Wynn live, STG306 is a clean replay.</p>
+
+    <h3 style="font-size:.95rem;margin:14px 0 4px">Flexible fillers — slot the repeats into MGM gaps</h3>
+    <p style="margin:4px 0 0;font-size:.94rem">The rest of this group runs twice and the guides don’t publish their times, so don’t anchor a day on them: favorite every sitting and take whichever one lands inside an MGM block or a gap in the lane you’ve already chosen (storage sessions are mostly at MGM Grand — 71 of 107 slots). Priority order when sittings compete:</p>
+    <ol class="tight" style="font-size:.94rem">
+      <li><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG331" target="_blank" rel="noopener">STG331</a> — S3 Tables data lake workshop. <strong>The one workshop commitment in this group — take it first.</strong></li>
+      <li><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG348" target="_blank" rel="noopener">STG348</a> — performant, cost-effective data lakes on S3 Tables (chalk).</li>
+      <li><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG352" target="_blank" rel="noopener">STG352</a> — monitoring &amp; optimizing S3 with observability tools (chalk).</li>
+      <li><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG329" target="_blank" rel="noopener">STG329</a> — S3 Metadata &amp; annotations, hands-on (Builders’).</li>
+      <li><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG347" target="_blank" rel="noopener">STG347</a> — discovery, context &amp; AI agents in S3. <strong>Last — it’s a recorded breakout, so replay covers it.</strong></li>
+    </ol>
+    <p class="alt" style="font-size:.9rem;color:var(--muted);margin:6px 0 0">Supporting, if a sitting fits: <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG356" target="_blank" rel="noopener">STG356</a> From CSV to Iceberg — the open-formats mental model behind the whole lane.</p>
+  </div>
+
+  <div class="lanes" id="lane-charts">
+    <h3>Lanes at a glance — pick one lane per day</h3>
+    <p class="intro">The same lanes as above, drawn as swimlanes: <strong>time runs left → right</strong>, each row is one lane. Rows joined by <span class="mono">OR</span> are <strong>alternatives — pick one, not both</strong>. Rows labelled “Everyone” are shared (keynotes, Expo, re:Play). Blocks are coloured by venue cluster, badged with the session level where the catalog lists one, and every code links to its catalog page. A time with <strong>~</strong> means the lane text gives the slot (morning / midday / afternoon) but no exact start — confirm it in the app.</p>
+    <div class="legend" aria-label="Venue cluster legend">
+      <span class="lg-mgm">■ South — MGM Grand</span><span class="lg-ctr">■ Center — Caesars Forum / Palace</span><span class="lg-nth">■ North — Venetian / Wynn / Encore</span><span class="lg-shr">■ Shared — everyone</span>
+    </div>
+
+    <div class="lane-day"><h4>Monday, Nov 30 <span class="mono">CHOOSE ONE LANE</span></h4>
+      <div class="lane-scroll"><div class="lane-inner">
+        <div class="lane-axis" aria-hidden="true"><i style="left:0">8 AM</i><i style="left:15.4%">10 AM</i><i style="left:30.8%">12 PM</i><i style="left:46.2%">2 PM</i><i style="left:61.5%">4 PM</i><i style="left:76.9%">6 PM</i><i style="left:92.3%">8 PM</i></div>
+        <div class="lane-row"><div class="lane-label">Lane A — South / MGM<small>Recommended · your base</small></div>
+          <div class="lane-track tall">
+            <div class="slot" style="left:3.8%;width:15.4%"><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=AIM439" target="_blank" rel="noopener"><b>AIM439</b><span class="vt">MGM</span><br>AgentCore ship-to-production workshop · 8:30 AM, 2 hrs</a></div>
+            <div class="slot" style="left:17.5%;width:12%"><span class="pick">Pick one · ~10 AM</span><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=DAT406" target="_blank" rel="noopener"><b>DAT406-R</b><span class="lv">400</span><span class="vt">MGM</span> GraphRAG</a><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET305" target="_blank" rel="noopener"><b>NET305</b><span class="lv">300</span><span class="vt">MGM</span> Encryption controls · 10 AM</a></div>
+            <div class="slot" style="left:30.8%;width:11%"><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=AIM418" target="_blank" rel="noopener"><b>AIM418</b><span class="vt">MGM</span><br>AI software development · 12 PM</a></div>
+            <div class="slot" style="left:50%;width:13%"><span class="pick">Pick one · ~2:30 PM</span><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=AIM429" target="_blank" rel="noopener"><b>AIM429</b><span class="vt">MGM</span> Agent inference</a><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=HMC311" target="_blank" rel="noopener"><b>HMC311</b><span class="lv">300</span><span class="vt">MGM</span> Outposts networking</a><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET337" target="_blank" rel="noopener"><b>NET337</b><span class="lv">300</span><span class="vt">MGM</span> Satellite connectivity</a></div>
+          </div></div>
+        <div class="or-divider">OR — PICK ONE LANE</div>
+        <div class="lane-row"><div class="lane-label">Lane B — North / Center<small>Wynn AM → Caesars PM</small></div>
+          <div class="lane-track tall">
+            <div class="slot" style="left:2%;width:13%"><span class="pick">Pick one · ~morning</span><a class="blk blk-nth" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP406" target="_blank" rel="noopener"><b>COP406</b><span class="lv">400</span><span class="vt">Wynn</span> Release mgmt, agentic era · 8:30 AM</a><a class="blk blk-nth" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=IND374" target="_blank" rel="noopener"><b>IND374</b><span class="lv">300</span><span class="vt">Wynn</span> Govern AI coding agents · 9 AM</a></div>
+            <div class="slot" style="left:30.8%;width:15.4%"><a class="blk blk-ctr" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=SVS303" target="_blank" rel="noopener"><b>SVS303</b><span class="lv">300</span><span class="vt">Caesars</span><br>Kiro workshop · 12–2 PM</a></div>
+            <div class="slot" style="left:65.4%;width:10%"><a class="blk blk-ctr" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP401" target="_blank" rel="noopener"><b>COP401</b><span class="lv">400</span><span class="vt">Caesars</span><br>Eval-driven observability · 4:30 PM</a></div>
+          </div></div>
+        <div class="lane-row"><div class="lane-label">Everyone — evening<small>Both lanes converge north</small></div>
+          <div class="lane-track">
+            <span class="travel" style="left:44%">⤢ 30+ min shuttle to Venetian</span>
+            <div class="slot" style="left:61.5%;width:21%"><div class="blk blk-nth"><b>Expo Welcome Reception</b><span class="vt">Venetian</span><br>4–7 PM · walk-up</div></div>
+            <div class="slot" style="left:88.5%;width:11%"><div class="blk blk-nth"><b>Developer Keynote</b><span class="vt">Venetian</span><br>7:30 PM</div></div>
+          </div></div>
+      </div></div>
+    </div>
+
+    <div class="lane-day"><h4>Tuesday, Dec 1 <span class="mono">KEYNOTE AM → MGM PM</span></h4>
+      <div class="lane-scroll"><div class="lane-inner">
+        <div class="lane-axis" aria-hidden="true"><i style="left:0">8 AM</i><i style="left:15.4%">10 AM</i><i style="left:30.8%">12 PM</i><i style="left:46.2%">2 PM</i><i style="left:61.5%">4 PM</i><i style="left:76.9%">6 PM</i><i style="left:92.3%">8 PM</i></div>
+        <div class="lane-row"><div class="lane-label">Everyone — Venetian AM<small>Keynote + Expo</small></div>
+          <div class="lane-track">
+            <div class="slot" style="left:3.8%;width:15.4%"><div class="blk blk-nth"><b>CEO Keynote</b><span class="vt">Venetian</span><br>Matt Garman · 8:30–10:30 AM</div></div>
+            <div class="slot" style="left:21%;width:13%"><div class="blk blk-nth"><b>Expo / AWS Village</b><span class="vt">Venetian</span><br>~Late morning — best Expo slot of the week</div></div>
+          </div></div>
+        <div class="lane-row"><div class="lane-label">Lane — MGM PM<small>One venue all afternoon</small></div>
+          <div class="lane-track tall">
+            <span class="travel" style="left:26.5%">⤢ 30+ min shuttle south + lunch at MGM</span>
+            <div class="slot" style="left:38.5%;width:10%"><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT428" target="_blank" rel="noopener"><b>ANT428-R</b><span class="lv">400</span><span class="vt">MGM</span><br>Iceberg lakehouse chalk · 1 PM</a></div>
+            <div class="slot" style="left:30.8%;width:7.5%"><a class="blk blk-mgm blk-alt" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET308" target="_blank" rel="noopener"><b>NET308</b><span class="lv">300</span><span class="vt">MGM</span><br>Private service fabric · 12 PM — conflicts, alternative only</a></div>
+            <div class="slot" style="left:57.7%;width:15.4%"><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET203" target="_blank" rel="noopener"><b>NET203</b><span class="lv">200</span><span class="vt">MGM</span><br>Hybrid DNS workshop · 3:30 PM — take it anyway, it’s the only one</a></div>
+            <div class="slot" style="left:76.9%;width:14%"><div class="blk blk-ctr"><b>Networking Reception</b><span class="vt">Caesars</span><br>6–8 PM · ~20–25 min from MGM</div></div>
+          </div></div>
+      </div></div>
+    </div>
+
+    <div class="lane-day"><h4>Wednesday, Dec 2 <span class="mono">KEYNOTE AM → MGM PM · SKIP PARTNER KEYNOTE LIVE</span></h4>
+      <div class="lane-scroll"><div class="lane-inner">
+        <div class="lane-axis" aria-hidden="true"><i style="left:0">8 AM</i><i style="left:15.4%">10 AM</i><i style="left:30.8%">12 PM</i><i style="left:46.2%">2 PM</i><i style="left:61.5%">4 PM</i><i style="left:76.9%">6 PM</i><i style="left:92.3%">8 PM</i></div>
+        <div class="lane-row"><div class="lane-label">Everyone — Venetian AM<small>Highest-value keynote</small></div>
+          <div class="lane-track">
+            <div class="slot" style="left:3.8%;width:13%"><div class="blk blk-nth"><b>Data &amp; AI Keynote</b><span class="vt">Venetian</span><br>8:30–10 AM</div></div>
+          </div></div>
+        <div class="lane-row"><div class="lane-label">Lane — MGM PM<small>Data + GovCloud afternoon</small></div>
+          <div class="lane-track tall" style="min-height:178px">
+            <span class="travel" style="left:15%">⤢ 30+ min shuttle south</span>
+            <div class="slot" style="left:30.8%;width:14%"><span class="pick">Pick one · 12 PM</span><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT351" target="_blank" rel="noopener"><b>ANT351</b><span class="vt">MGM</span> Governed intelligence for agents</a><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT401" target="_blank" rel="noopener"><b>ANT401</b><span class="vt">MGM</span> Data governance workshop · 12–2 PM</a></div>
+            <div class="slot" style="left:38.5%;width:11%;top:126px"><a class="blk blk-mgm blk-alt" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT342" target="_blank" rel="noopener"><b>ANT342</b><span class="vt">MGM</span> Glue Data Catalog · 1 PM — overlaps the 2-hr workshop above, so it’s the skip-the-workshop alternative</a></div>
+            <div class="slot" style="left:61.5%;width:15%"><span class="pick">The 4 PM decision · pick one</span><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET327" target="_blank" rel="noopener"><b>NET327</b><span class="lv">300</span><span class="vt">MGM</span> Connectivity across partitions ★</a><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=DAT425" target="_blank" rel="noopener"><b>DAT425</b><span class="vt">MGM</span> Aurora deep dive</a><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT442" target="_blank" rel="noopener"><b>ANT442</b><span class="vt">MGM</span> OpenSearch vector search</a></div>
+            <div class="slot" style="left:78%;width:13%"><div class="blk blk-shr"><b>Evening</b><span class="vt">Shared</span><br>Expo Happy Hour 4:30–6 PM (Venetian) or Receptions 6–8 PM</div></div>
+          </div></div>
+      </div></div>
+      <p class="lane-note"><strong>Center alternative at 12:30 PM — pick one, they clash:</strong> <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=OPN307" target="_blank" rel="noopener">OPN307</a> Build multi-agent workflows with Strands (Caesars Forum) vs <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=OPN304" target="_blank" rel="noopener">OPN304</a> Observability: Strands, OpenTelemetry, and Langfuse (Caesars Forum, 12:30–2:30 PM). Same slot — OPN307 for building, OPN304 for tracing/evals. Choosing either means leaving the MGM lane above for a Center half-day; not drawn as a block so the MGM lane times stay as planned. See the LangChain / LangSmith equivalents box in Priority Sessions.</p>
+      <p class="lane-note"><strong>Observability &amp; Gateway overlay (Wed):</strong> if you take <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=OPN304" target="_blank" rel="noopener">OPN304</a> at 12:30 PM, the 4:00 PM decision becomes <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP402" target="_blank" rel="noopener">COP402</a> at Caesars Palace (gateway pick, short walk) vs <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET327" target="_blank" rel="noopener">NET327</a> at MGM (GovCloud pick). See the <a href="#obs-lane">fitted Observability &amp; Gateway lane</a> above for Mon–Thu.</p>
+    </div>
+
+    <div class="lane-day"><h4>Thursday, Dec 3 <span class="mono">PICK MGM OR WYNN, NOT BOTH</span></h4>
+      <div class="lane-scroll"><div class="lane-inner">
+        <div class="lane-axis" aria-hidden="true"><i style="left:0">8 AM</i><i style="left:15.4%">10 AM</i><i style="left:30.8%">12 PM</i><i style="left:46.2%">2 PM</i><i style="left:61.5%">4 PM</i><i style="left:76.9%">6 PM</i><i style="left:92.3%">8 PM</i></div>
+        <div class="lane-row"><div class="lane-label">Lane A — MGM<small>Data + networking day</small></div>
+          <div class="lane-track tall">
+            <div class="slot" style="left:7.7%;width:9%"><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET323" target="_blank" rel="noopener"><b>NET323</b><span class="lv">300</span><span class="vt">MGM</span><br>Route 53 · 9 AM</a></div>
+            <div class="slot" style="left:17.5%;width:9%"><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT312" target="_blank" rel="noopener"><b>ANT312</b><span class="vt">MGM</span><br>Data processing · 10 AM</a></div>
+            <div class="slot" style="left:30.8%;width:10%"><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=DAT451" target="_blank" rel="noopener"><b>DAT451</b><span class="vt">MGM</span><br>Netflix on Aurora · 12 PM</a></div>
+            <div class="slot" style="left:42.3%;width:12%"><span class="pick">Pick one · 1:30 PM</span><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT303" target="_blank" rel="noopener"><b>ANT303</b><span class="lv">300</span><span class="vt">MGM</span> Iceberg lakehouse</a><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT315" target="_blank" rel="noopener"><b>ANT315</b><span class="vt">MGM</span> Athena cost</a></div>
+            <div class="slot" style="left:53.8%;width:11%"><a class="blk blk-mgm" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=IND397" target="_blank" rel="noopener"><b>IND397</b><span class="lv">300</span><span class="vt">MGM?</span><br>Prototype → ATO repeat · 3 PM — check venue in catalog</a></div>
+          </div></div>
+        <div class="or-divider">OR — PICK ONE LANE</div>
+        <div class="lane-row"><div class="lane-label">Lane B — Wynn Security<small>Security Focus Day · skip the keynote live, replay it</small></div>
+          <div class="lane-track tall">
+            <div class="slot" style="left:3.8%;width:38%"><div class="blk blk-nth blk-alt"><b>Security Focus Day</b><span class="vt">Wynn</span><br>~97 SEC sessions across Thursday — browse the catalog under SEC and anchor on the chalk talk below</div></div>
+            <div class="slot" style="left:50%;width:12%"><a class="blk blk-nth" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COM321" target="_blank" rel="noopener"><b>COM321</b><span class="lv">300</span><span class="vt">Wynn</span><br>Regulated agent harness · 2:30 PM</a></div>
+          </div></div>
+        <div class="lane-row"><div class="lane-label">Everyone — evening<small>Expo closes 4 PM Thu</small></div>
+          <div class="lane-track">
+            <div class="slot" style="left:80.8%;width:18%"><div class="blk blk-shr"><b>re:Play</b><span class="vt">Allegiant</span><br>6:30–10:30 PM · shuttles 6:15–11 PM</div></div>
+          </div></div>
+      </div></div>
+      <p class="lane-note"><strong>S3 alternative (Thu) — a third option for this day:</strong> swap Lane A’s 10 AM slot for <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG306" target="_blank" rel="noopener">STG306</a> S3 Tables deep dive (10:30–11:30 AM, MGM), then <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT320" target="_blank" rel="noopener">ANT320-R</a> data mesh (11:30 AM, MGM) before the existing 1:30 PM ANT303 / ANT315 pick — an all-MGM S3 / analytics lane. It directly conflicts with <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP407" target="_blank" rel="noopener">COP407</a> (10:30 AM, Wynn) in the observability lane, so Thursday stays pick-one-lane. See the <a href="#s3-day-lane">S3 lane</a> above.</p>
+    </div>
+
+    <div class="lane-day"><h4>Friday, Dec 4 <span class="mono">HALF DAY · NORTH ONLY · FLIGHT 3:20 PM</span></h4>
+      <div class="lane-scroll"><div class="lane-inner">
+        <div class="lane-axis" aria-hidden="true"><i style="left:0">8 AM</i><i style="left:15.4%">10 AM</i><i style="left:30.8%">12 PM</i><i style="left:46.2%">2 PM</i><i style="left:61.5%">4 PM</i><i style="left:76.9%">6 PM</i><i style="left:92.3%">8 PM</i></div>
+        <div class="lane-row"><div class="lane-label">Single lane — North<small>Venetian + Wynn/Encore only · sessions end 12:30 PM</small></div>
+          <div class="lane-track">
+            <div class="slot" style="left:2%;width:11%"><a class="blk blk-nth" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP404" target="_blank" rel="noopener"><b>COP404</b><span class="vt">North</span><br>Example worth checking</a></div>
+            <div class="slot" style="left:14%;width:11%"><a class="blk blk-nth" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=DAT442" target="_blank" rel="noopener"><b>DAT442-R2</b><span class="vt">North</span><br>Example worth checking</a></div>
+            <div class="slot" style="left:26%;width:11%"><a class="blk blk-nth" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COM320" target="_blank" rel="noopener"><b>COM320</b><span class="vt">North</span><br>Example worth checking</a></div>
+            <div class="slot" style="left:40%;width:22%"><div class="blk blk-shr"><b>Otherwise fly home rested</b><br>Only make the north trip if a named session justifies it</div></div>
+          </div></div>
+      </div></div>
+      <p class="lane-note">Reading the charts: stacked blocks in one slot are either/or options for that slot — the “pick one” label says so. Dashed blocks are alternatives or all-day context, not anchors. No times were invented: every positioned block uses a time already stated in the lanes above or on its session card; sequence-only items carry “~”.</p>
+    </div>
+  </div>
+</section>
+
+<section id="sessions">
+  <h2>Priority sessions by theme</h2>
+  <p class="lede">Level 300/400 only (two flagged exceptions where the topic has no advanced option). ★ = interactive and <strong>not recorded</strong> — attend live or lose it. Times/venues are as published in AWS track guides and playbooks; re-check each sitting in the catalog — repeat sittings (<span class="mono">-R / -R1 / -R2</span>) can differ in format, time, and venue.</p>
+  <div class="linknote" role="note">
+    <strong>How the “View in catalog” links work:</strong> the public catalog has no per-session page and <strong>no reserve button</strong> — session titles just expand in place, so the only shareable link is a catalog search. Every card below links to a search for its exact code; searching the base code (e.g. <span class="mono"><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=SVS303" target="_blank" rel="noopener">SVS303</a></span>) returns <em>all</em> of that session’s sittings, repeats included.
+    <p>In the public catalog you can only <strong>favorite</strong> a session (the heart). Actually reserving a seat requires signing in to the attendee portal / AWS Events app — so use these links to jump straight to the listing, then favorite or reserve once you’re signed in.</p>
+  </div>
+  <div class="infobox" role="note">
+    <strong><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=SVS303" target="_blank" rel="noopener">SVS303</a> vs <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=SVS303" target="_blank" rel="noopener">SVS303-R</a> — what’s the difference? Nothing but the sitting.</strong>
+    <p>There is no plain <span class="mono"><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=SVS303" target="_blank" rel="noopener">SVS303</a></span> listing in the public catalog — only <span class="mono"><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=SVS303" target="_blank" rel="noopener">SVS303-R</a></span> and <span class="mono"><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=SVS303" target="_blank" rel="noopener">SVS303-R1</a></span>. Both are “AI-driven serverless development with Kiro,” Workshop 300, tagged <em>Repeat</em>, laptop required, with identical descriptions and details (Lambda, Step Functions, Kiro). The <span class="mono">-R</span> / <span class="mono">-R1</span> suffix means <strong>Repeat</strong>: a second or third sitting of the exact same session, at a different time and room. The public catalog doesn’t publish date, time, or venue per sitting — the signed-in attendee portal / AWS Events app shows the differing time and room. (Same pattern for <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=AIM439" target="_blank" rel="noopener">AIM439</a>: only <span class="mono">-R</span> and <span class="mono">-R1</span> exist.)</p>
+    <p>Playbook reporting puts one <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=SVS303" target="_blank" rel="noopener">SVS303</a> sitting at <strong>Mon Nov 30, 12:00–2:00 PM, Caesars Palace Pompeian IV</strong> — that’s the sitting on the card below; the repeat sitting’s time is in the signed-in catalog. <strong>Rule: reserve ONE sitting only</strong> — the one that fits your venue lane that day. Don’t book both.</p>
+  </div>
+
+  <div class="card" id="langchain-map" style="border:2px solid var(--accent2);margin:0 0 20px">
+    <div class="theme-head" style="margin-bottom:6px"><span class="theme-num" style="background:var(--accent2)">⇄</span><div><h3>LangChain / LangSmith — the AWS-native equivalents</h3><p>AWS doesn’t name sessions after LangChain — this is the same stack, rebuilt cloud-native. Use this map when you’re deciding what to replace, and what to keep.</p></div></div>
+    <div class="tablewrap" style="box-shadow:none;margin:10px 0 12px"><table class="stack-table">
+      <thead><tr><th>If you use…</th><th>AWS-native equivalent</th></tr></thead>
+      <tbody>
+        <tr><td><strong>LangChain / LangGraph</strong><br><span class="note">Orchestration framework — graphs, shared state, tool use</span></td><td><strong>Strands Agents SDK + Amazon Bedrock AgentCore</strong> — Runtime, Gateway, Memory</td></tr>
+        <tr><td><strong>LangSmith</strong><br><span class="note">Tracing, evals, datasets, prompt A/B tests</span></td><td><strong>AgentCore Observability + AgentCore Evaluations</strong>, Amazon CloudWatch GenAI observability, and <strong>OpenTelemetry / OpenInference + Langfuse</strong></td></tr>
+      </tbody>
+    </table></div>
+    <p style="margin:0 0 12px"><strong>Verdict — if you only do two:</strong> do <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP401" target="_blank" rel="noopener">COP401</a> for the LangSmith side and <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=AIM407" target="_blank" rel="noopener">AIM407</a> for the LangChain side.</p>
+
+    <h3 style="font-size:.95rem;margin:14px 0 6px">Already in Theme 1 — the core equivalents (full cards below)</h3>
+    <ul class="tight" style="margin-top:0">
+      <li><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP401" target="_blank" rel="noopener">COP401</a> <strong>Building eval-driven observability for AI agents</strong> — Code Talk 400, Mon Nov 30, 4:30–5:30 PM, Caesars Forum Forum 120. <strong>Closest 1:1 to LangSmith:</strong> starts with a multi-agent app on LangGraph, Strands, and CrewAI, instruments it with OpenTelemetry / OpenInference, then LLM-as-judge evals, A/B prompt/model tests, and production traces → versioned dataset → reproduce locally.</li>
+      <li><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=OPN304" target="_blank" rel="noopener">OPN304</a> <strong>Observability for AI agents: Strands, OpenTelemetry, and Langfuse</strong> — Wed Dec 2, 12:30–2:30 PM, Caesars Forum. Langfuse is the open-source LangSmith alternative — this is the pattern AWS is pushing instead of LangSmith proper.</li>
+      <li><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=AIM407" target="_blank" rel="noopener">AIM407</a> <strong>Build a production multi-agent system with Strands</strong> — Builders’ 400, Mon 12:00 PM, MGM Grand Chairman’s 363; repeat R1 Mon 1:30 PM, MGM. Shared state, failure handling, deploy to AgentCore — the LangGraph orchestration equivalent.</li>
+      <li><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=AIM439" target="_blank" rel="noopener">AIM439</a> <strong>Getting Started with AgentCore</strong> workshop — Mon 8:30 AM, MGM. The runtime half: memory, tool access, identity, observability, and evaluation in one workshop.</li>
+    </ul>
+
+    <h3 style="font-size:.95rem;margin:14px 0 8px">New additions — same mapping, more depth</h3>
+    <div class="sess">
+      <article class="s"><span class="code">OPN307</span> <span class="star" title="Must-book: interactive, not recorded">★ MUST-BOOK</span><h4>Build multi-agent workflows with Strands Agents SDK on AWS</h4><p>The LangChain / LangGraph replacement, hands-on. <strong>⚠ Conflict: runs at the same time as <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=OPN304" target="_blank" rel="noopener">OPN304</a> (Wed 12:30–2:30 PM) — pick one:</strong> OPN307 if you want building, OPN304 if you want tracing / evals.</p><div class="meta">Wed 12:30 PM · Caesars Forum</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=OPN307" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">OPN401</span><h4>Powertools for agent DevOps: Debug reasoning, not just exceptions</h4><p>Debug the agent’s reasoning, not just its exceptions — the DevOps / debugging layer that sits alongside LangSmith-style tracing.</p><div class="meta">Tue 11:30 AM · Caesars Forum</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=OPN401" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">OPN406</span> <span class="star" title="Must-book: interactive, not recorded">★ MUST-BOOK</span><h4>Cut token costs by 50%: Building context-efficient agents with Strands</h4><p>Context efficiency as a cost lever for Strands agents — directly relevant to large-corpus AI cost. Catalog listing is OPN406-R1.</p><div class="meta">Tue 2:30–3:30 PM · MGM Grand Boulevard 159 · Code Talk 400</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=OPN406" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">COM326</span> <span class="star" title="Must-book: interactive, not recorded">★ MUST-BOOK</span><h4>Observable Agents with Lambda durable functions and OpenTelemetry</h4><p>The serverless route to observable agents: Lambda durable functions + OpenTelemetry tracing, instead of a separate LangSmith pipeline.</p><div class="meta">Mon 3:00–4:00 PM · Caesars Forum · Code Talk 300</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COM326" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+    </div>
+
+    <h3 style="font-size:.95rem;margin:18px 0 4px">Observability &amp; Gateway — the fitted stack (LiteLLM / logging / traceability)</h3>
+    <p style="margin:0 0 10px;font-size:.92rem;color:var(--muted)">Fitted into the <a href="#obs-lane">Observability &amp; Gateway lane</a> in Day-By-Day — not a separate wish list. Live-only formats are the in-person picks; recorded breakouts are explicitly marked replay so you don’t burn a slot on them. Source for times/venues: AWS observability blog “Embracing Observability for the AI era at re:Invent 2026” and Builder Center playbooks.</p>
+    <div class="sess">
+      <article class="s"><span class="code">COP318</span> <span class="star" title="Must-book: interactive, not recorded">★ MUST-BOOK · MON PICK</span><h4>Catch it before production: Instrument your AI agents</h4><p>Instrument a live agent end-to-end: token cost, latency, tool calls, reasoning traces, dashboards + anomaly alerts. <strong>The pick for the Mon Wynn cluster</strong> — it covers COP309 / COP325 hands-on in one workshop.</p><div class="meta">Mon Nov 30 12:00–2:00 PM · Wynn/Encore Brahms 4 · Workshop</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP318" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">COP309</span><h4>I didn’t know my AI agent was doing that!</h4><p>Use CloudWatch to trace what a live agent actually did. <strong>⚠ Conflicts with COP318 (overlap) — do NOT schedule both.</strong> Alternative only if COP318 is full.</p><div class="meta">Mon Nov 30 1:30 PM · Wynn Latour 7 · Builders’</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP309" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">COP325</span><h4>Observability patterns for agentic AI in production</h4><p>Production observability patterns as a chalk discussion. <strong>⚠ Conflicts with COP318 — do NOT schedule both.</strong> COP318 is the pick; this is the fallback.</p><div class="meta">Mon Nov 30 1:00–2:00 PM · Wynn Latour 5 · Chalk Talk</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP325" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">COP401</span> <span class="star" title="Must-book: interactive, not recorded">★ MUST-BOOK</span><h4>Building eval-driven observability for AI agents</h4><p>Already in Theme 1 above — listed here because it completes Monday: fits after COP318 (Wynn → Caesars Forum, 2:00 → 4:30 gap).</p><div class="meta">Mon Nov 30 4:30–5:30 PM · Caesars Forum</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP401" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">COP349</span><h4>Build a per-tenant observability stack for Agentic SaaS</h4><p>Per-tenant observability for agentic SaaS. <strong>Alternative only — conflicts with COP401</strong> at the same time. Pick COP401.</p><div class="meta">Mon Nov 30 4:30 PM · Wynn · Builders’</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP349" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">COP335</span> <span class="tag rec">WATCH REPLAY</span><h4>Evolve your observability for the agentic era</h4><p>Breakout = recorded. <strong>Watch replay, don’t burn the slot</strong> — Tuesday morning is keynote + Expo.</p><div class="meta">Tue Dec 1 11:30 AM–12:30 PM · Wynn Cristal 2 · Breakout</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP335" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">COP319</span> <span class="star" title="Must-book: interactive, not recorded">★ MUST-BOOK</span><h4>Observe AI agents beyond your perimeter</h4><p>Per-team cost attribution, OTLP from developer machines — token usage, cost, tool decisions and reasoning chains shipped to CloudWatch, no collectors. Also in Theme 7. <strong>In the fitted lane Tue 1:00 PM — drops ANT428-R.</strong></p><div class="meta">Tue Dec 1 1:00 PM · Caesars Forum Forum 120 · Builders’</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP319" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">COP304</span> <span class="tag rec">WATCH REPLAY</span><h4>Observability and operations in the AI era</h4><p>Breakout = recorded. <strong>Mark replay</strong> — conflicts with NET203 Tue 3:30 PM MGM workshop in the existing plan. Note: this is COP304, not OPN304 (the Langfuse session).</p><div class="meta">Tue Dec 1 4:00–5:00 PM · Wynn Encore Ballroom 5 · Breakout</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP304" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">COP337</span> <span class="tag rec">WATCH REPLAY</span><h4>Wrong, Not Broken</h4><p>CloudWatch Omni, cross-cloud observability. <strong>Replay / alternative only — conflicts with OPN304 Wed 12:30.</strong> Don’t give up OPN304 for a recorded breakout.</p><div class="meta">Wed Dec 2 12:00–1:00 PM · Wynn Cristal 2 · Breakout</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP337" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">INV521</span><h4>Teaching Telemetry to Think</h4><p>Optional extra chalk on telemetry — only if you stay North on Wednesday and give up OPN304 that day.</p><div class="meta">Wed Dec 2 1:00–2:00 PM · Wynn Latour 5 · Chalk</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=INV521" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">COP402</span> <span class="star" title="Must-book: interactive, not recorded">★ MUST-BOOK</span><h4>Scaling operations with MCP, ACP, and A2A</h4><p>Gateway / protocol governance at scale. <strong>Wed 4:00 PM pick-one:</strong> this (Caesars Palace, 5–10 min walk from OPN304) OR NET327 at MGM — the gateway pick vs the GovCloud pick.</p><div class="meta">Wed Dec 2 4:00–5:00 PM · Caesars Palace Neopolitan I · Chalk 400</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP402" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">COP340</span> <span class="star" title="Must-book: interactive, not recorded">★ MUST-BOOK</span><h4>Best practices for building an observability strategy in the age of AI</h4><p>Opens the Thursday Wynn observability lane — strategy before the incident-response code talk.</p><div class="meta">Thu Dec 3 8:30–9:30 AM · Caesars Forum Academy 409 · Chalk</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP340" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">COP407</span> <span class="star" title="Must-book: interactive, not recorded">★ MUST-BOOK</span><h4>Build-time context for faster agentic incident response</h4><p>Build-time context wired into incident response for agents — second stop in the Thursday lane, before COM321.</p><div class="meta">Thu Dec 3 10:30–11:30 AM · Wynn Margaux 1 · Code Talk</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP407" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">OPN301</span> <span class="tag rec">WATCH REPLAY</span><h4>Governing AI assets at scale with MCP Gateway and Registry</h4><p>Gateway governance — but a recorded Breakout 300. <strong>Conflicts with COM321 Thu 2:30 PM Wynn: OPN301 = replay, COM321 stays the live pick.</strong></p><div class="meta">Thu Dec 3 3:00–4:00 PM · Caesars Forum · Breakout 300</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=OPN301" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+    </div>
+
+    <div class="infobox" role="note" style="margin:14px 0 0">
+      <strong>LiteLLM — there is no re:Invent session for it.</strong>
+      <p><strong>No session code exists for LiteLLM</strong> — don’t hunt the catalog for one. LiteLLM on Fargate + Bedrock Application Inference Profiles + Langfuse is an <strong>AWS-published architecture pattern</strong> (AWS ML Blog: “Building a self-service LLM gateway with Amazon Bedrock and LiteLLM”): Route 53 / CloudFront / ALB → LiteLLM on Fargate with a scoped IAM task role → Bedrock, per-user keys and cost controls, CloudWatch for RPM/TPM and quota alarms, and Langfuse for prompt-level telemetry. The <strong>managed alternative</strong> is AgentCore Gateway with InvokeModel APIs + model fallback routing, plus Bedrock Intelligent Prompt Routing and Application Inference Profiles for per-app cost tagging.</p>
+      <p><strong>How to cover it at re:Invent:</strong> take it to the <strong>AgentCore Gateway / Bedrock kiosk + Ask the Experts in Expo on Tuesday after the CEO Keynote</strong> (you’re already in the Venetian for the keynote and the LangChain Booth #1740 stop), and use <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP402" target="_blank" rel="noopener">COP402</a> live on Wednesday plus <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=OPN301" target="_blank" rel="noopener">OPN301</a> on replay for gateway governance.</p>
+    </div>
+
+    <div class="linknote" role="note" style="margin:14px 0 0">
+      <strong>Compare directly in Expo:</strong> LangChain itself is at <strong>Booth #1740 demoing LangSmith</strong>, with a lightning talk <strong>Tue Dec 1, 10:30 AM — “Beyond Evals: Setting up your agents and your enterprise for success”</strong> (Expo Floor, Builder Zone Stage; Joel Johnson, LangChain). Worth a 20-minute stop Tue after the CEO Keynote, then judge it against <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP401" target="_blank" rel="noopener">COP401</a> / <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=OPN304" target="_blank" rel="noopener">OPN304</a>. Source: <a href="https://fieldevents.langchain.com/awsreinvent2026" target="_blank" rel="noopener">LangChain’s re:Invent page</a>.
+    </div>
+  </div>
+
+  <div class="card" id="s3-lane" style="border:2px solid var(--accent);margin:0 0 20px">
+    <div class="theme-head" style="margin-bottom:6px"><span class="theme-num">S3</span><div><h3>S3 Tables / S3 Observability / S3 Metadata — the batch-on-S3 shortlist</h3><p>Fitted into Day-By-Day as the <a href="#s3-day-lane">S3 lane</a> — a Thursday MGM alternative plus flexible MGM fillers. Source: AWS Storage Blog “Buckets’ guide to AWS Storage at re:Invent 2026” + Builder Center Data playbook. Most STG sessions run twice and the guides don’t publish their times — those cards say so; don’t assume a slot until the app shows one.</p></div></div>
+    <div class="hedge" style="margin:10px 0 14px"><strong>Framing — batch, not real-time:</strong> your processing isn’t real-time or speed-constrained; it needs to be reasonably fast and stable. So the stack this group builds is <strong>S3 Tables managed Iceberg + Athena batch query + S3 Metadata for discovery / provenance</strong>, letting S3 Tables automate compaction and maintenance instead of self-run EMR / Glue jobs. No streaming or S3 performance-engineering sessions are in this group — they solve a problem you don’t have. Storage class / lifecycle cost (<a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG341" target="_blank" rel="noopener">STG341</a> S3 cost optimization: when to tier, and when not to) is supporting context for the raw-object side of the same design.</div>
+
+    <h3 style="font-size:.95rem;margin:14px 0 8px">S3 Tables</h3>
+    <div class="sess">
+      <article class="s"><span class="code">STG331</span> <span class="star" title="Must-book: interactive, not recorded">★ MUST-BOOK · THE WORKSHOP PICK</span><h4>Build a fully managed data lake with Amazon S3 Tables</h4><p>Build a working analytics data lake with S3 Tables in under two hours: ingest and migrate data, query it with Amazon Athena, and explore with DuckDB. <strong>The one workshop commitment in this group — prioritize it over every other S3 session.</strong></p><div class="meta">Workshop · 2 hrs · laptop required · Runs twice — check both sittings in the app</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG331" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">STG348</span> <span class="star" title="Must-book: interactive, not recorded">★ MUST-BOOK</span><h4>Designing performant and cost-effective data lakes on Amazon S3 Tables</h4><p>Compaction, snapshot expiration, and partition design — and how S3 Tables can automate the heavy lifting. This is where “reasonably fast” is won or lost over time, without you running the maintenance.</p><div class="meta">Chalk Talk · Runs twice — check both sittings in the app</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG348" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">STG306</span> <span class="tag rec">REPLAY OPTION</span><h4>Amazon S3 Tables: A deep dive into storage built for Apache Iceberg</h4><p>S3 Tables continuously optimize Apache Iceberg tables as your data grows. <strong>Thursday anchor:</strong> it anchors the Thu MGM S3 lane (<a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT320" target="_blank" rel="noopener">ANT320-R</a> 11:30 → <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT303" target="_blank" rel="noopener">ANT303</a> / <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT315" target="_blank" rel="noopener">ANT315</a> 1:30) and directly conflicts with <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP407" target="_blank" rel="noopener">COP407</a> in the Wynn lane — pick one lane. Breakout = recorded, so replay is a real fallback.</p><div class="meta">Thu Dec 3 10:30–11:30 AM · MGM Grand · Breakout 300</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG306" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">STG356</span> <span class="tag">SUPPORTING</span><h4>From CSV to Iceberg: Understanding open data formats on Amazon S3</h4><p>The formats mental model behind the whole lane: CSV / Parquet, table and partition schemas, Iceberg, and S3 Tables as the managed experience. Optional / supporting — take it if a sitting lands in a gap.</p><div class="meta">Check sittings in the app</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG356" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+    </div>
+
+    <h3 style="font-size:.95rem;margin:18px 0 8px">S3 Observability</h3>
+    <div class="sess">
+      <article class="s"><span class="code">STG352</span> <span class="star" title="Must-book: interactive, not recorded">★ MUST-BOOK</span><h4>Monitoring and optimizing Amazon S3 with observability tools</h4><p>S3 Storage Lens, server access logs, CloudWatch metrics, and S3 Metadata — spotting cost anomalies, diagnosing latency, and auditing access across accounts. This is the stability / audit session for the batch design.</p><div class="meta">Chalk Talk · Runs twice — check both sittings in the app</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG352" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+    </div>
+
+    <h3 style="font-size:.95rem;margin:18px 0 8px">S3 Metadata</h3>
+    <div class="sess">
+      <article class="s"><span class="code">STG329</span> <span class="star" title="Must-book: interactive, not recorded">★ MUST-BOOK · LIVE-ONLY</span><h4>Gaining insights with S3 Metadata and annotations</h4><p>Attach JSON / XML / YAML / text annotations to objects, query at scale through the S3 Metadata Iceberg table in Athena, and wire an agent that finds objects by annotation search. The hands-on half of the Metadata pair — for a document corpus, this is the provenance / discovery layer without a separate catalog database.</p><div class="meta">Builders’ Session · live-only · Check sittings in the app</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG329" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+      <article class="s"><span class="code">STG347</span> <span class="tag rec">WATCH REPLAY</span><h4>Know your data: discovery, context, and AI agents in Amazon S3</h4><p>S3 Metadata and annotations turn billions of objects into a searchable, context-rich data estate you can query through managed Apache Iceberg tables. <strong>Lowest live priority in this group</strong> — it’s a recorded breakout, so replay it and spend the live slot on STG329.</p><div class="meta">Breakout · recorded · Check sittings in the app</div><div><a class="catlink" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG347" target="_blank" rel="noopener">View in catalog ↗</a></div></article>
+    </div>
+
+    <div class="infobox" role="note" style="margin:14px 0 0">
+      <strong>How to fit this group — priority order for the flexible sittings</strong>
+      <p><span class="mono">STG331</span> (only workshop) &gt; <span class="mono">STG348</span> &gt; <span class="mono">STG352</span> &gt; <span class="mono">STG329</span> &gt; <span class="mono">STG347</span> (last — recorded breakout). STG331, STG348 and STG352 each run twice: favorite both sittings of each and take whichever lands in an MGM block or a gap in your chosen lane — storage lives at MGM Grand (71 of 107 slots). STG306 is the fixed point: Thu 10:30 AM MGM, in direct conflict with COP407 — see the <a href="#s3-day-lane">S3 lane in Day-By-Day</a>. Cross-reference, don’t duplicate: <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT428" target="_blank" rel="noopener">ANT428-R</a> Iceberg lakehouse operations (Theme 4) and <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG301" target="_blank" rel="noopener">STG301</a> S3 Vectors (Theme 4) already have cards in the themes below.</p>
+    </div>
+  </div>
+
+  <div class="filters" role="group" aria-label="Filter sessions">
+    <button class="fbtn" data-f="all" aria-pressed="true">All themes</button>
+    <button class="fbtn" data-f="agents" aria-pressed="false">Bedrock agents</button>
+    <button class="fbtn" data-f="hybrid" aria-pressed="false">Hybrid / GovCloud</button>
+    <button class="fbtn" data-f="pipelines" aria-pressed="false">Doc pipelines</button>
+    <button class="fbtn" data-f="data" aria-pressed="false">Data &amp; search</button>
+    <button class="fbtn" data-f="edge" aria-pressed="false">Edge / disconnected</button>
+    <button class="fbtn" data-f="platform" aria-pressed="false">ECS / Fargate</button>
+    <button class="fbtn" data-f="coding" aria-pressed="false">Coding agents</button>
+    <button class="fbtn" data-f="must" aria-pressed="false">★ Must-book only</button>
+  </div>
+  <div id="themes"></div>
+</section>
+
+<section id="formats">
+  <h2>Formats: what’s recorded, what’s reservable</h2>
+  <p class="lede">The rule that drives the whole strategy: interactive formats are never recorded, so they’re the only sessions worth fighting for live. Breakouts and keynotes are recorded and on YouTube/on-demand within days — watch those later.</p>
+  <div class="tablewrap"><table class="stack-table">
+    <thead><tr><th>Format</th><th>What it is</th><th>Length</th><th>Recorded?</th><th>Reservable?</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Workshop</strong></td><td>Hands-on, small team, real AWS accounts. Laptop required — bring a personal laptop; the conference group noted corporate-device restrictions can interfere with labs.</td><td>120 min</td><td>No</td><td>Yes — fills first</td></tr>
+      <tr><td><strong>Builders’ Session</strong></td><td>Small group (~15) building alongside one AWS expert; laptop often required.</td><td>60 min</td><td>No</td><td>Yes — fills first/second</td></tr>
+      <tr><td><strong>Chalk Talk</strong></td><td>Interactive whiteboard architecture discussion, Q&amp;A-heavy.</td><td>60 min</td><td>No</td><td>Yes — fills first/second</td></tr>
+      <tr><td><strong>Code Talk</strong></td><td>Live-coding demo by an expert.</td><td>60 min</td><td>No</td><td>Yes</td></tr>
+      <tr><td><strong>Breakout</strong></td><td>Lecture-style, AWS expert + customer/partner.</td><td>60 min</td><td><strong>Yes</strong></td><td>No — walk-up only</td></tr>
+      <tr><td><strong>Lightning Talk</strong></td><td>Focused demo / customer story in the Expo Hall or Wynn/Encore promenade.</td><td>20 min</td><td>No</td><td>No — walk-up only</td></tr>
+      <tr><td><strong>Self-paced labs / GameDays / bootcamps / Ask the Experts</strong></td><td>Drop-in labs run 8:00–5:30 Mon–Thu at Caesars Forum/Palace and the Venetian.</td><td>Varies</td><td>No</td><td>Bootcamps, exam prep, gamified learning &amp; select labs only</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note" style="margin-top:10px">Levels: 100 Foundational · 200 Intermediate · <strong>300 Advanced · 400 Expert</strong> · 500 Distinguished. Favoriting ≠ reserving: favoriting is a bookmark (you may favorite overlapping sessions); reserving is the extra step that holds the seat. You may not reserve multiple sessions at the same time, seats are non-transferable, and no total reservation cap was published in the FAQ — the binding constraint is one reservation per time slot. AWS references: <a href="https://aws.amazon.com/events/reinvent/sessions/how-youll-learn/">How You’ll Learn</a> · <a href="https://aws.amazon.com/events/reinvent/faqs/">re:Invent FAQs</a>.</p>
+</section>
+
+<section id="venues">
+  <h2>Venues &amp; travel: your base is an advantage</h2>
+  <p class="lede">Networking (NET), Databases/Analytics (DAT/ANT), and Storage (STG) live at MGM Grand — 71 of 107 storage slots are there. The pain points are keynotes + Expo (Venetian), Security (Wynn/Encore), and much Developer/Serverless content (Caesars Forum/Palace).</p>
+  <div class="grid2">
+    <div class="card"><h3>Who lives where</h3><ul class="tight">
+      <li><strong>MGM Grand (South — you):</strong> NET, DAT/ANT, STG headquarters.</li>
+      <li><strong>The Venetian (North):</strong> all 5 keynotes (Ballroom E), Expo (Hall B), AWS Village.</li>
+      <li><strong>Wynn | Encore (North):</strong> SEC headquarters + Thursday Security Focus Day; some COP/DVT content.</li>
+      <li><strong>Caesars Forum + Caesars Palace (Center):</strong> Developer Tools, Serverless, Partner hub, Customer Showcase, Certification Lounge. Forum ≠ Palace — 0.4 mi / 5–10 min walk apart.</li>
+      <li><strong>Encore</strong> also hosts the invite-only Public Sector Partner Forum (Mon).</li>
+    </ul></div>
+    <div class="card"><h3>Travel times from MGM Grand (estimates)</h3><ul class="tight">
+      <li>MGM → Venetian: <strong>30+ min by shuttle</strong></li>
+      <li>MGM → Wynn/Encore: <strong>30+ min by shuttle</strong></li>
+      <li>MGM → Caesars Palace / Forum: <strong>~20–25 min by shuttle</strong></li>
+      <li>Venetian ↔ Wynn/Encore: 10–15 min walk · Venetian ↔ Caesars Forum: 15–20 min walk</li>
+      <li><strong>Monorail is free for badge holders</strong> — MGM Grand has a station, often faster than shuttles for Caesars Forum (Harrah’s/The LINQ). Shuttles require a badge and run continuously in conference hours; exact times are in the AWS Events app.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="playbook">
+  <h2>The booking playbook — act on the Nov 19 reality</h2>
+  <p class="lede">The Storage guide’s arithmetic: the maximum possible 60-minute sessions across the whole week is 24 — with no travel, meals, or Expo. A sustainable plan is 3–4 sessions/day Mon–Thu (at most one 2-hour workshop), plus the Tue/Wed morning keynotes: roughly 14–17 live sessions for the week.</p>
+  <ol class="steps">
+    <li><b>Favorite everything on your target list — today</b><p>Favorites drive change alerts and become your walk-up plan. Favorite freely, including overlapping sessions.</p></li>
+    <li><b>Reserve any seat that’s actually open, in priority order</b><p>One reservation per slot. Workshops and builders’ sessions first (smallest rooms), then chalk talks, then code talks.</p></li>
+    <li><b>Hunt the repeats</b><p>Look for <span class="mono">-R / -R1 / -R2</span> sittings — many target sessions run twice (28 of 79 storage sessions repeat; AIM and <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=IND397" target="_blank" rel="noopener">IND397</a> repeat too). Verify each sitting separately: format, time, and venue can differ.</p></li>
+    <li><b>Re-check daily — and after every keynote</b><p>Cancellations reopen seats, and AWS adds new-launch sessions after each keynote. Search the catalog for “[NEW LAUNCH]” (e.g. <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=DAT452" target="_blank" rel="noopener">DAT452</a>/<a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=DAT453" target="_blank" rel="noopener">DAT453</a> slots at MGM Wed/Thu).</p></li>
+    <li><b>Work the walk-up line like it’s the plan — because it is</b><p>~20% of capacity is never reserved, and every reserved no-show is released at T−10 minutes. For a must-see full chalk talk or workshop, queue 30–40 minutes early within the same venue cluster. For breakouts, just arrive early — they’re walk-up anyway.</p></li>
+    <li><b>Protect every reservation you hold</b><p>Arrive ≥10 minutes early or your seat is released and you go to the back of the walk-up line. And never hold a reservation you won’t use — release it in the app the moment a lane decision is made.</p></li>
+    <li><b>Bring a personal laptop</b><p>Workshops and many builders’ sessions require one, and corporate-device restrictions can interfere with hands-on labs.</p></li>
+  </ol>
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><h3>Skip live — watch on demand</h3><p class="note" style="color:var(--ink)">Partner Keynote · <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET404" target="_blank" rel="noopener">NET404</a> · <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=CON326" target="_blank" rel="noopener">CON326</a> · <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG346" target="_blank" rel="noopener">STG346</a> · <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=DVT204" target="_blank" rel="noopener">DVT204</a> · <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=CMP202" target="_blank" rel="noopener">CMP202</a> · any 200-level “what’s new” · introductory Bedrock, Lambda, ECS, or generic migration sessions. All breakouts are recorded.</p></div>
+    <div class="card"><h3>Attend live or lose it forever</h3><p class="note" style="color:var(--ink)">Every workshop, chalk talk, builders’ session, code talk, and lightning talk; Ask the Experts 1:1s; and the Expo / AWS Village expert conversations. That’s the entire ★ list above.</p></div>
+  </div>
+</section>
+
+<section id="networking">
+  <h2>Networking &amp; non-session value</h2>
+  <div class="grid2">
+    <div class="card"><h3>Public Sector</h3><ul class="tight">
+      <li><strong>Public Sector Partner Forum — Mon Nov 30, 2:00–5:00 PM, Encore. Invite-only</strong> (partner-facing, not a general GovCloud customer session). If you believe you should be invited: aws-public-sector-partner-events@amazon.com.</li>
+      <li><strong>Public Sector Partner Appreciation Reception — Wed Dec 2, 5:30–7:00 PM</strong>, Beauty &amp; Essex, Cosmopolitan.</li>
+      <li><strong>Expo Public Sector / WWPS pavilion:</strong> start at the Public Sector industries zone, and catch the Expo lightning talk on AWS Government Regions AI and HPC offerings, <strong>Thu Dec 3, 2:00 PM</strong>, Expo theater adjacent to the WWPS pavilion.</li>
+      <li>No general-admission “Public Sector Summit” day was listed on the agenda page — public-sector value in 2026 is the Forum (invite-only), the Expo zone, and sessions like <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=IND397" target="_blank" rel="noopener">IND397</a> / <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=IND410" target="_blank" rel="noopener">IND410</a>.</li>
+      <li>Also on your list from planning: the <strong>AWS Public Sector event on Wednesday</strong> and an <strong>AI dinner with the AWS support contact</strong> from your re:Invent group chat — neither appears on the public agenda, so confirm both directly with your contacts.</li>
+    </ul></div>
+    <div class="card"><h3>Experts, Expo &amp; certification</h3><ul class="tight">
+      <li><strong>Ask the Experts</strong> is the 2026 name for 1:1 time with AWS engineers on your specific challenges — no branded “Ask an Architect” / formal architecture-review booking was found on the agenda/FAQ pages. Bring your TGW / Route 53 Resolver / SSO questions and your QA-harness design; the Networking kiosk at the Expo explicitly lists hybrid connectivity as a topic. These appear as catalog activities — check the app.</li>
+      <li><strong>Expo (Venetian Hall B):</strong> Mon 4–7 PM welcome · Tue–Wed 10 AM–6 PM · Thu 10 AM–4 PM. AWS cites both 420+ sponsors/booths (agenda) and 450+ partners (Expo/FAQ pages). Best use: Tuesday late morning, right after the CEO keynote.</li>
+      <li><strong>LangChain — Booth #1740 (LangSmith demo):</strong> lightning talk <strong>Tue Dec 1, 10:30 AM, “Beyond Evals: Setting up your agents and your enterprise for success”</strong> (Expo Floor, Builder Zone Stage; Joel Johnson, LangChain). Worth a 20-min stop Tue after the CEO Keynote to compare LangSmith directly against the AWS-native route in <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP401" target="_blank" rel="noopener">COP401</a> / <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=OPN304" target="_blank" rel="noopener">OPN304</a>. Source: <a href="https://fieldevents.langchain.com/awsreinvent2026" target="_blank" rel="noopener">LangChain’s re:Invent page</a>.</li>
+      <li><strong>Certification: no exams onsite in 2026.</strong> In-person registrants get a 50% discount voucher for any AWS Certification exam — appointment must be before Jan 31, 2027, via the attendee portal. Certification Lounge: Caesars Forum, Academy 407, Mon–Thu 7:30 AM–5:00 PM. On-site microcredentials and exam-prep Escape Rooms are offered (distinct from full exams).</li>
+      <li><strong>Networking Receptions:</strong> Tue 6–8 PM (Caesars Palace, Venetian) · Wed 6–8 PM (+ Wynn/Encore). <strong>AMPED Industries &amp; Startup Party Wed 7:00 PM at AREA15</strong> (RSVP in portal, per playbooks).</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="gaps">
+  <h2>Known gaps — check these yourself in the catalog</h2>
+  <p class="lede">Honest limits from the research. These topics have no dedicated titled 300/400 sessions in the guides searched — coverage lives inside abstracts and workshops, or wasn’t found at all. A logged-in catalog keyword search is the final check; this is not proof that zero such sessions exist among 2,651 listings.</p>
+  <div class="hedge">
+    <ul class="tight" style="margin:0">
+      <li><strong>Transit Gateway, PrivateLink, Route 53 Resolver</strong> rarely appear in 2026 titles — they live inside abstracts (<a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET215" target="_blank" rel="noopener">NET215-R</a>, <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET305" target="_blank" rel="noopener">NET305-R</a>, <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET314" target="_blank" rel="noopener">NET314</a>). No session is titled for AWS Verified Access or “zero-trust network access”; the closest is <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=NET340" target="_blank" rel="noopener">NET340</a> Secure Service Edge.</li>
+      <li><strong>SSO / identity federation:</strong> no dedicated deep-dive title surfaced. Treat it as an Ask the Experts / Expo kiosk question, not a session anchor.</li>
+      <li><strong>Snow family &amp; EKS Anywhere:</strong> no titled sessions surfaced in any 2026 guide searched — edge coverage is Outposts / Local Zones / AI Factories / satellite. Don’t count on Snow/EKS-Anywhere content; use <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=HMC402" target="_blank" rel="noopener">HMC402</a>/<a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=HMC403" target="_blank" rel="noopener">HMC403</a> + Ask the Experts for disconnected/sync questions.</li>
+      <li><strong>Lake Formation, DataZone, DMS, SageMaker Unified Studio:</strong> no 2026 session names them in title/abstract (Data playbook gap note) — governance coverage runs through Glue Data Catalog / SageMaker (<a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT342" target="_blank" rel="noopener">ANT342</a>, <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT407" target="_blank" rel="noopener">ANT407</a>, <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=ANT401" target="_blank" rel="noopener">ANT401</a>).</li>
+      <li><strong>Graviton:</strong> 400-level Graviton-specific sessions were thin in the sources searched; the clearest Graviton+Fargate story is the British Airways customer session <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=MAM318" target="_blank" rel="noopener">MAM318</a>. <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=CMP202" target="_blank" rel="noopener">CMP202</a> (EC2 silicon) is 200-level — catch it on demand.</li>
+      <li><strong>No ECS-specific OpenTelemetry titled session</strong> surfaced — ask at the ECS/observability Expo kiosks.</li>
+      <li><strong>“Amazon Q Developer” branding is largely superseded</strong> in the 2026 catalog by Kiro (spec-driven agentic IDE/CLI) and frontier agents — search the catalog for <em>Kiro</em>, not Q.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Sources</strong> — all read Thu Nov 19, 2026. Session codes/titles come from AWS official track guides and Builder Center attendee playbooks (catalog reads Nov 11–13) plus a verified-live catalog check; agenda facts verified live on the agenda page.</p>
+  <ul>
+    <li>Agenda — <a href="https://aws.amazon.com/events/reinvent/agenda/">aws.amazon.com/events/reinvent/agenda</a></li>
+    <li>Session catalog — <a href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog">registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog</a></li>
+    <li>Keynotes — <a href="https://aws.amazon.com/events/reinvent/sessions/keynotes/">aws.amazon.com/events/reinvent/sessions/keynotes</a> · FAQ — <a href="https://aws.amazon.com/events/reinvent/faqs/">aws.amazon.com/events/reinvent/faqs</a> · How You’ll Learn — <a href="https://aws.amazon.com/events/reinvent/sessions/how-youll-learn/">aws.amazon.com/events/reinvent/sessions/how-youll-learn</a> · Expo — <a href="https://aws.amazon.com/events/reinvent/experiences/expo/">aws.amazon.com/events/reinvent/experiences/expo</a></li>
+    <li>AI/ML guide — <a href="https://aws.amazon.com/blogs/machine-learning/the-attendees-guide-to-the-aws-reinvent-2026-ai-ml-track/">aws.amazon.com/blogs/machine-learning</a> · Networking guide — <a href="https://aws.amazon.com/blogs/networking-and-content-delivery/your-aws-networking-and-content-delivery-guide-to-reinvent-2026/">aws.amazon.com/blogs/networking-and-content-delivery</a> · Serverless guide — <a href="https://aws.amazon.com/blogs/compute/your-serverless-attendees-guide-to-aws-reinvent-2026/">aws.amazon.com/blogs/compute</a> · Storage guide — <a href="https://aws.amazon.com/blogs/storage/buckets-guide-to-whats-in-store-with-aws-storage-at-reinvent-2026/">aws.amazon.com/blogs/storage</a> · Observability — <a href="https://aws.amazon.com/blogs/mt/embracing-observability-for-the-ai-era-at-reinvent-2026/">aws.amazon.com/blogs/mt</a></li>
+    <li>Data playbook — <a href="https://builder.aws.com/content/3M1cXufLs5UwUKQZVccY4CWf13L/aws-reinvent-2026-the-attendee-playbook-data-track-databases-and-analytics">builder.aws.com</a> · Network &amp; Security playbook — <a href="https://builder.aws.com/content/3M3kHehgzPGuK8wtxczTvyvpzdO/aws-reinvent-2026-the-attendee-playbook-for-network-and-security-engineers-architects-and-the-office-of-the-ciso">builder.aws.com</a> · Developer playbook — <a href="https://builder.aws.com/content/3M1ZMjwm1tVbuT53CoJtPaZf9Nd/aws-reinvent-the-attendee-playbook-for-software-developers-engineers">builder.aws.com</a> · Open-seats analysis (Nov 7) — <a href="https://builder.aws.com/content/3KFq7lQ9pBNdrMNgQI7KVGCvQDS/i-kept-seeing-full-in-the-reinvent-catalog-so-i-built-a-fix">builder.aws.com</a></li>
+    <li>Partner guide — <a href="https://aws.amazon.com/blogs/apn/know-before-you-go-an-aws-partners-guide-to-reinvent-2026/">aws.amazon.com/blogs/apn</a> · GovCloud newsletter — <a href="https://aws.amazon.com/govcloud-us/newsletter/">aws.amazon.com/govcloud-us/newsletter</a> · Migrations/Outposts guide — <a href="https://aws.amazon.com/blogs/migration-and-modernization/infrastructure-migrations-your-complete-aws-reinvent-2026-guide/">aws.amazon.com/blogs/migration-and-modernization</a> · Community track — <a href="https://builder.aws.com/content/3LhbkTXUkYpviyLMGu1u2PjJGuH/learn-from-the-builders-whove-done-it-the-reinvent-2026-community-track">builder.aws.com</a></li>
+  </ul>
+  <p>Your week in one line: anchor on MGM, go north only for keynotes and Expo, spend live time only on what isn’t recorded, and treat every ★ session as a walk-up campaign — favorite, repeat-hunt, re-check daily, queue early.</p>
+</footer>
+</div>
+
+<script>
+var THEMES=[
+{id:"agents",n:"1",t:"Production agent systems on Bedrock",d:"The dominant 2026 theme — and your QA harness’s home turf. AgentCore lifecycle, evals, Guardrails, and multimodal document processing.",items:[
+["AIM439","Getting Started with AgentCore: ship an agent to production in 2 hours",1,"Hands-on: memory, tool access, identity, policies, observability, evaluation. The ideal MGM-base Monday opener.","Mon 8:30 AM · MGM Grand · Workshop"],
+["AIM440","Turn production traces + evaluations into continuous agent-quality improvement",1,"The eval/observability core for a QA harness.","Workshop / interactive · check catalog"],
+["COP401","Building eval-driven observability for AI agents",1,"OTEL/OpenInference traces, LLM-as-judge evaluators, A/B prompt/model tests, production traces → versioned dataset → reproduce locally.","Mon 4:30–5:30 PM · Caesars Forum Forum 120 · Code Talk 400"],
+["OPN304","Observability for AI agents: Strands, OpenTelemetry, and Langfuse",1,"Agent tracing stack, Caesars Forum. Langfuse = open-source LangSmith alternative pattern on AWS. CONFLICT Wed 12:30–2:30 with OPN307 — pick OPN304 for tracing/evals, OPN307 for building.","Wed 12:30–2:30 PM · Caesars Forum"],
+["OPN307","Build multi-agent workflows with Strands Agents SDK on AWS",1,"The LangChain/LangGraph replacement, hands-on. CONFLICT: same slot as OPN304 Wed 12:30–2:30 — pick one: OPN307 for building, OPN304 for tracing/evals. See the LangChain / LangSmith equivalents box above.","Wed 12:30 PM · Caesars Forum"],
+["OPN401","Powertools for agent DevOps: Debug reasoning, not just exceptions",0,"Debug agent reasoning, not just exceptions — agent DevOps layer alongside LangSmith-style tracing. See the LangChain / LangSmith equivalents box above.","Tue 11:30 AM · Caesars Forum"],
+["OPN406","Cut token costs by 50%: Building context-efficient agents with Strands",1,"Context-efficient Strands agents as a token-cost lever (catalog listing OPN406-R1). See the LangChain / LangSmith equivalents box above.","Tue 2:30–3:30 PM · MGM Grand Boulevard 159 · Code Talk 400"],
+["AIM407","Build a production multi-agent system with Strands",1,"Shared state, failure handling, deploy to AgentCore — the LangGraph orchestration equivalent. See the LangChain / LangSmith equivalents box above.","Mon 12:00 PM · MGM Grand Chairman’s 363 · Builders’ 400 · Repeat R1 Mon 1:30 PM MGM"],
+["AIM335","Automated Reasoning checks in Bedrock Guardrails (workshop)",1,"Turn decision rules into provable, auditable Guardrails checks — one per decision.","Workshop"],
+["AIM336","Audit a multi-agent claims system for responsible-AI gaps (workshop)",1,"Produce an evidence-backed report — the closest analogue to an agentic QA defect harness.","Workshop"],
+["AIM442","Build a pipeline that turns documents into structured, checkable data",1,"Document-intelligence core for technical publications.","Advanced session"],
+["COM321","The Agent Harness You Own on AWS for Regulated Industries",1,"Fail-closed permission gate, hash-chained off-cloud-verifiable audit, RACI gate per action — mapped to AgentCore Identity/Guardrails/Evaluations + Lambda MicroVMs.","Thu 2:30 PM · Wynn Chopin 2 · Chalk 300"],
+["IND397","Accelerate your agentic AI mission from prototype to ATO in weeks",1,"The GovCloud-specific pick.","Thu 10:30 AM & 3:00 PM · Chalk 300"],
+["AIM212","Complete AgentCore lifecycle + Nasdaq on agents in a regulated industry",0,"Direct regulated-industry analogue for GovCloud work.","Breakout/session"],
+["AIM436","Scaling agents: traffic spikes, tool failures, model timeouts, multi-tenancy",1,"Production failure modes, plus AIM303 (fleet-wide discovery, tool-access control, identity, observability) and AIM370 (securing user-request → agent-action).","Interactive"],
+["AIM429","From prompts to loops: inference best practices for agents",0,"Cost/latency of agent loops — directly relevant to large-corpus AI cost. Pair with AIM437 (prompt caching, model routing, batch inference) and AIM438 (test candidate models before switching).","Mon 2:30 PM · MGM Grand"],
+["AIM308","Knowledge assistant across documents, images, structured data — and links between them",0,"Knowledge Bases / multimodal RAG for tech pubs. Also AIM357 cross-modal search, AIM351 automated evaluation, AIM350 web grounding, AIM448 Bedrock inference options by cost/data residency.","Session"],
+["AIM451","Enforce rules agents can’t circumvent + human-in-the-loop",1,"Chalk talk; pair with INV508/INV526 (500-level: policy → machine-checkable rules; provable agent behaviour and its limits) and AIM332 fairness testing for agent decisions.","Chalk"],
+["SVS336","Building production AI agents on AWS: compute, security, state, and cost",0,"Serverless-side view of production agents.","Caesars Forum"],
+["COM311 / COM329","Production AgentCore guardrails · Sandboxing agents on EKS",0,"Community-track companions to the AIM list.","Community track"]
+]},
+{id:"hybrid",n:"2",t:"Hybrid networking for regulated / GovCloud",d:"Nearly all at MGM Grand — a major base advantage. Your TGW, private DNS, TLS-trust, and cross-partition problems, hands-on.",items:[
+["NET327","Connectivity strategies across AWS Partitions",1,"Cross-partition (Commercial / GovCloud / sovereign) connectivity — the single best GovCloud session in the list.","Wed 4:00 PM · MGM Grand Chairman’s 363 · 300"],
+["NET307","Bridging clouds: building global multicloud and hybrid networks on AWS",1,"Must-book workshop for AWS ↔ enterprise interconnect.","Mon 8:30 AM · MGM Grand Grand 111 · Workshop 300"],
+["NET203","Resolve it all: build hybrid DNS architectures on AWS",1,"The Route 53 Resolver / hybrid private-DNS hands-on. Flag: listed 200-level — the only hybrid-DNS workshop in the guide; take it despite the level if private DNS is a live problem.","Tue 3:30 PM · MGM Grand Grand 116 · Workshop"],
+["NET404","Connect everything, everywhere: AWS global connectivity",0,"Conflicts with NET307 — pick NET307 for hands-on; NET404 is a walk-up breakout and recorded.","Mon 8:30 AM · MGM Grand Chairman’s 363 · 400"],
+["NET308","Building a private service fabric across AWS accounts and orgs",0,"PrivateLink / VPC Lattice fabric pattern.","Tue 12:00 PM · MGM Grand · 300"],
+["NET305","Enforce encryption in transit using Amazon VPC Encryption Controls",1,"TLS-trust analogue, builders’ format. Repeat NET305-R1 Tue 12:00 PM, MGM.","Mon 10:00 AM · MGM Grand · Builders’ 300"],
+["NET304","Advanced VPC design and new capabilities",0,"Conflicts with the Data & AI Keynote — the breakout is recorded, so keynote-or-catch-up is a real choice.","Wed 8:30 AM · MGM Grand Premier 318 · 300"],
+["NET323","What’s new in Amazon Route 53: DNS innovations for 2026",0,"Anchor of the Thursday MGM lane.","Thu 9:00 AM · MGM Grand Chairman’s 363 · 300"],
+["NET301","See the routes change: live BGP with AWS Direct Connect",0,"Code talk. Pair with NET406 — Managing and Monitoring AWS Direct Connect at Scale (400), Mon 2:30 PM, Caesars Forum.","Mon 1:00 PM · MGM Grand · Code Talk 300"],
+["NET324","Network security architecture: deployment patterns for firewalls",1,"Chalk talk. Also SEC315 — Advanced AWS Network Security workshop (Network Firewall, Route 53 Resolver DNS Firewall, east-west controls) and SEC407 (scoped IAM + Cedar guardrails for agents) — verify in catalog.","Thu 8:30 AM · MGM Grand · Chalk 300"],
+["NET204","Centralize AWS PrivateLink endpoints at scale with Amazon VPC Lattice",0,"200-level, but on-topic hands-on builders’ session.","Mon 4:30 PM · MGM Grand · Builders’"],
+["NET314","Tenant isolation at scale: network patterns for ISVs",1,"Chalk talk in the MGM cluster.","Wed 2:30 PM · MGM Grand · Chalk 300"]
+]},
+{id:"pipelines",n:"3",t:"Event-driven document pipelines",d:"Step Functions, EventBridge, SQS, Distributed Map — likely the next architectural step for your conversion and QA harnesses.",items:[
+["SVS309","Building serverless distributed data processing workloads",1,"Step Functions Distributed Map + Lambda + S3: thousands of objects in parallel, partial-failure handling. The large-corpus doc-pipeline session — top priority in this theme.","Builders’ Session"],
+["COM325","The agent orchestration spectrum: agents, Step Functions, or Lambda?",1,"Live-codes the same workload on AgentCore vs Step Functions vs durable functions — latency/cost/debuggability compared on a production content platform.","Code Talk"],
+["API311","How event-driven architectures go wrong and how to fix them",1,"Unbounded fan-out, missing DLQs, chatty schemas, silent drops.","Chalk"],
+["API317","Coding event-driven retry patterns that prevent outages",0,"Backoff/jitter, circuit breakers, poison-pill isolation, replay from archive for EventBridge + Step Functions.","Code Talk"],
+["API305","Building enterprise-scale event buses with Amazon EventBridge",0,"Routing policies, schema discovery, access controls.","Builders’ Session"],
+["API314","A closer look at AWS Lambda durable functions",1,"Checkpointing/replay, sagas, human-in-the-loop — plus the durable-functions-vs-Step-Functions framework. Pair with SVS401 (orchestrating agentic apps with durable functions) and SVS325 (distributed transactions, Builders’).","Chalk"],
+["API312","Building event-driven, multi-agent architectures on serverless",1,"EventBridge agent coordination (peer-to-peer, supervisor-worker, broadcast) and circular-delegation failure modes. Pair with SVS306 — agentic AI architectures with AWS Serverless (Builders’).","Chalk"],
+["ARC325","Serverless at 1M RPS: Lambda, DynamoDB, and SQS scaling lessons",1,"Cold starts, retry amplification, backpressure. Also ARC308 — queue-based decoupling trade-offs (Wynn).","Chalk"],
+["COM326","Observable Agents with Lambda durable functions and OpenTelemetry",1,"Observable agents via Lambda durable functions + OpenTelemetry — the serverless tracing/evals pattern. See the LangChain / LangSmith equivalents box above Theme 1.","Mon 3:00–4:00 PM · Caesars Forum · Code Talk 300"],
+["SVS334","Serverless observability: OpenTelemetry and vended logs",1,"Tracing across Step Functions / EventBridge / SQS plus agentic token-use observability. Also SVS335 (operating at 1,000+ functions) and SVS341 (Lambda performance/cost tuning).","Chalk"]
+]},
+{id:"data",n:"4",t:"Large-scale data & document analytics",d:"Replace ad hoc databases and spreadsheets with a governed evidence layer: Iceberg lakehouse, vector/hybrid search, lineage and provenance.",items:[
+["ANT428-R","Best practices for operating an Apache Iceberg lakehouse at scale",1,"The Iceberg operations anchor.","Tue 1:00 PM · MGM Grand · Chalk 400"],
+["ANT437","Accelerate lakehouse analytics with Apache Iceberg materialized views",1,"Seen live in the catalog; repeats available.","Builders’/Workshop 400"],
+["STG301","Scale data for RAG and AI agents cost-effectively with Amazon S3 Vectors",1,"Vector storage economics for corpus work.","Mon 8:30 AM · MGM Grand Chairman’s 363 · Breakout 300"],
+["ANT442","Make your vector search faster, more relevant, and cost-efficient (OpenSearch)",0,"Hybrid/vector search tuning.","Wed 4:00 PM · MGM Grand"],
+["ANT407","Govern data and AI agents with lineage and context in AWS Glue Data Catalog",1,"Lineage = provenance for corpus work.","Mon 2:30 PM · Caesars Palace · 400"],
+["ANT401","Data governance for trustworthy AI: from raw data to trusted products",1,"Two-hour governance workshop in your home venue.","Wed 12:00–2:00 PM · MGM Grand · Workshop"],
+["ANT303","Accelerate analytics and AI with an open lakehouse architecture on Apache Iceberg",0,"Conflicts with ANT315 — pick architecture (this) vs cost (ANT315).","Thu 1:30 PM · MGM Grand · 300"],
+["ANT315","Advanced optimization & cost-saving strategies for Amazon Athena",1,"The cost counterpart to ANT303.","Thu 1:30 PM · MGM Grand"],
+["ANT312","What’s new in AWS data processing (EMR, Glue, Athena, MWAA)",0,"Thursday-morning MGM anchor. Also ANT342 — Glue Data Catalog for data & AI governance, Wed 1:00 PM MGM; ANT351 — AWS Context: governed intelligence for agents, Wed 12:00 PM MGM; ANT320-R — data mesh governance & attribution, Thu 11:30 AM MGM.","Thu 10:00 AM · MGM Grand"],
+["DAT441","DynamoDB: trillion-scale vector search",0,"Plus DAT317 — a practitioner’s guide to data for agentic AI (Mon 3:00 PM, Caesars Palace) and DAT406-R — agentic GraphRAG with Neptune (Builders’ 400, Mon 10:30 AM, MGM).","Mon 1:00 PM · MGM Grand · 400"],
+["STG307","Deploy AI agents on containers with Amazon S3 Files and S3 Vectors",1,"Agents handing off work via a shared file system + vector memory — a direct QA-harness pattern. Also STG346 (S3 Files launch — skip live, recorded) and STG365 (video search at trillion scale with S3 Vectors).","Workshop"],
+["STG406","Advanced S3 performance engineering: from multipart to resilience",1,"Laptop required. Pair with STG342 (S3 performance architecture) and INV510 (500-level: Inside Amazon S3).","Workshop 400"],
+["DAT425","Deep dive into Amazon Aurora and its innovations",0,"Your Aurora core, with DAT401 (Aurora HA/DR patterns, Mon 9:00 AM MGM), DAT451 (Netflix on Aurora PostgreSQL, 40TB+, Thu 12:00 PM MGM), and DAT430 (multi-Region active-active with Aurora DSQL workshop, Thu 8:30 AM MGM).","Wed 4:00 PM · MGM Grand"]
+]},
+{id:"edge",n:"5",t:"Edge & disconnected operations",d:"Attend with one question: how can cloud-generated technical data and AI capabilities operate safely on disconnected field devices?",items:[
+["HMC402","Building agents at the edge — managed route",1,"Connect Bedrock AgentCore agents in a Region to tools/agents in hybrid and edge locations via MCP + A2A. Best fit for cloud QA harness ↔ local viewer/device architectures.","Workshop 400"],
+["HMC403","Building agents at the edge — self-managed route",1,"Design, set up, and tune your own agents across Local Zones and Outposts. Pair with HMC401 — orchestrate fractional GPUs across the edge with NVIDIA Run:ai (Code Talk 400).","Workshop 400"],
+["HMC311","Architecting AWS Outposts networking for enterprise and ultra-low-latency workloads",1,"Conflicts with NET337 (same slot, same cluster) — pick one.","Mon 3:00 PM · MGM Grand Boulevard 155 · Chalk 300"],
+["HMC303","Regions vs Local Zones vs Dedicated Local Zones vs AI Factories vs Outposts",0,"Choose on latency, data sovereignty, compute density, scale. Also AIM206 — AWS AI Factories: AWS+NVIDIA infrastructure in your own data centre.","Session 300"],
+["HMC304","Real-world migrations: lessons learned migrating to AWS Outposts",0,"Monday-morning MGM option, with HMC319 (migrate & modernise with Outposts, Chalk, Mon 1:30 PM Caesars Palace) and HMC202 (AWS wherever you need it, Wed 3:00 PM Caesars Palace, 200-level).","Mon 10:00 AM · MGM Grand · 300"],
+["HMC308","VMware migration to EC2 and AWS Outposts with AWS Transform",1,"Hands-on migration workshop in your home venue.","Tue 12:30 PM · MGM Grand · Workshop 300"],
+["NET337","Extending your cloud network with Amazon Leo satellite connectivity",1,"Disconnected/backhaul-adjacent — the alternative pick against HMC311.","Mon 3:00 PM · MGM Grand · Chalk 300"]
+]},
+{id:"platform",n:"6",t:"ECS / Fargate platform engineering",d:"Advanced scaling, safe deployments, and agents on the container platform you already run. Titles/levels verified live in the catalog Nov 19 — repeat sittings’ format tags vary, so verify the specific sitting.",items:[
+["CON317","Productionize, secure, and scale agentic applications on Amazon ECS",1,"Agents on your existing GovCloud-style ECS platform. Top ECS pick; laptop required.","Builders’ 300 · repeats"],
+["CON335","Architect production MCP servers on Amazon ECS",1,"“Works on a single ECS task, then agents multiply, sessions collide” — the MCP tool layer for the QA harness.","Chalk 300 · repeats"],
+["CON308","Right-size and scale Amazon ECS with effective autoscaling patterns",1,"Pair with CON310 — ship software safely with ECS advanced deployments (rolling vs blue/green vs canary/linear, Chalk, repeats).","Chalk 300 · repeats"],
+["CON321","Build a production multi-tier application on Amazon ECS",1,"Full-stack ECS workshop; laptop required. Also CON322 — accelerated workloads with ECS Managed Instances (Workshop 300, repeats).","Workshop 300 · repeats"],
+["CON340","Troubleshooting and recovering failed Amazon ECS deployments",0,"With CON318 (resilient deployment pipelines), CON330 (multi-layer resilience), and CON345 — eliminate wasted compute capacity (Code Talk).","Repeats"],
+["CON326","What’s new and what’s next for Amazon ECS",0,"Walk-up breakout — recorded, so deprioritise live. CON341 (5 ECS features that prevent production incidents) is a walk-up Lightning 300.","Breakout 300 · walk-up"],
+["MAM318","British Airways: agentic AI to modernise Java services at scale",0,"EC2 → ECS on Fargate with Graviton for 250+ services / 750 repos — the clearest Graviton+Fargate customer story found.","Customer session 300 · walk-up"],
+["CON401","Accelerate platform engineering on Amazon EKS",1,"If the OpenShift-adjacent platform angle matters — plus CON304 (EKS Capabilities, Builders’ 300) and COM404 — scaling multi-cluster EKS without burning the budget (Chalk 400, Wed 1:30 PM, MGM).","Workshop 400 · repeats"]
+]},
+{id:"coding",n:"7",t:"AI coding-agent engineering & governance",d:"Skip basic “AI writes code” talks. In 2026 AWS terms this is Kiro + Bedrock — search the catalog for Kiro, not Amazon Q Developer. Seek evaluation, governance, and team-scale workflows.",items:[
+["IND374","Don’t ban it, broker it: govern AI coding agents with Amazon Bedrock",1,"The coding-agent governance anchor. North venue Monday morning — pair it with a Wynn/Caesars Monday, not an MGM Monday.","Mon 9:00 AM · Wynn Chopin 4 · Chalk 300"],
+["COP406","Rethink release management for the agentic coding era",1,"Overlaps the IND374 lane (both North, Mon morning) — pick one.","Mon 8:30 AM · Wynn Cristal 2 · Code Talk 400"],
+["COP319","Observe AI agents beyond your perimeter",1,"Ship OTEL metrics/logs/traces from developer machines — token usage, cost, tool decisions, reasoning chains — to CloudWatch OTLP. Exactly a Devin/Kiro fleet-governance problem.","Builders’ Session"],
+["AIM418","Best practices for AI-powered software development on Amazon Bedrock",1,"The MGM-lane coding pick; pair with AIM416 — coding agents off the laptop: long-lived, parallel workflows on AgentCore.","Mon 12:00 PM · MGM Grand"],
+["DVT310","Agentic development with AWS CDK",0,"Directly CDK-relevant, Monday-morning Center option.","Mon 8:30 AM · Caesars Forum"],
+["SVS303","AI-driven serverless development with Kiro",1,"Two-hour Kiro hands-on. Pair with SVS328 — guardrails for AI-generated serverless infrastructure (over-permissioned IAM, skipped encryption: automate vs human-review). See the repeat-sittings box above: the catalog lists only SVS303-R / SVS303-R1 — book one sitting.","Mon 12:00–2:00 PM · Caesars Palace Pompeian IV · Workshop 300 (playbook-reported sitting)"],
+["IND410","Building mission-ready software faster with Kiro",0,"Public-sector Kiro builders’ session — the GovCloud-flavoured coding pick.","Mon 8:30 AM + Tue 1:30 PM · Builders’"],
+["PEX303","Govern, bill, and attribute: the unit economics of production agents",1,"With PEX305 — ship agents you can trust: an agent evaluation framework (Mon, Caesars Palace partner hub), IND302 — evaluating AI agents for production in financial services (Tue 2:30 PM, Caesars Palace), COP323 — trust but verify: the audit loop for AI agents (Wynn), and PEX311 — agentic AI governance for regulated industries (Tue 4:30 PM, Wynn).","Mon 9:00 AM · Caesars Palace · Chalk 300"],
+["DVT337","Build a SaaS control plane with Kiro specs and Strands",0,"Spec-driven build session in your home venue. DVT204 — how customers scaled Kiro and proved the value (Breakout 200, Wed 4:00 PM, Caesars Forum) is value-measurement worth catching on demand.","Mon 1:30 PM · MGM Grand"]
+]}
+];
+var GUIDES={
+agents:[["AI/ML track guide","https://aws.amazon.com/blogs/machine-learning/the-attendees-guide-to-the-aws-reinvent-2026-ai-ml-track/"],["Observability at re:Invent","https://aws.amazon.com/blogs/mt/embracing-observability-for-the-ai-era-at-reinvent-2026/"]],
+hybrid:[["Networking & Content Delivery guide","https://aws.amazon.com/blogs/networking-and-content-delivery/your-aws-networking-and-content-delivery-guide-to-reinvent-2026/"],["Network & Security playbook","https://builder.aws.com/content/3M3kHehgzPGuK8wtxczTvyvpzdO/aws-reinvent-2026-the-attendee-playbook-for-network-and-security-engineers-architects-and-the-office-of-the-ciso"]],
+pipelines:[["Serverless attendee guide","https://aws.amazon.com/blogs/compute/your-serverless-attendees-guide-to-aws-reinvent-2026/"]],
+data:[["Data track playbook (Databases & Analytics)","https://builder.aws.com/content/3M1cXufLs5UwUKQZVccY4CWf13L/aws-reinvent-2026-the-attendee-playbook-data-track-databases-and-analytics"],["Storage guide","https://aws.amazon.com/blogs/storage/buckets-guide-to-whats-in-store-with-aws-storage-at-reinvent-2026/"]],
+edge:[["Migrations & Outposts guide","https://aws.amazon.com/blogs/migration-and-modernization/infrastructure-migrations-your-complete-aws-reinvent-2026-guide/"]],
+platform:[["Developer playbook","https://builder.aws.com/content/3M1ZMjwm1tVbuT53CoJtPaZf9Nd/aws-reinvent-the-attendee-playbook-for-software-developers-engineers"]],
+coding:[["Developer playbook","https://builder.aws.com/content/3M1ZMjwm1tVbuT53CoJtPaZf9Nd/aws-reinvent-the-attendee-playbook-for-software-developers-engineers"],["Community track guide","https://builder.aws.com/content/3LhbkTXUkYpviyLMGu1u2PjJGuH/learn-from-the-builders-whove-done-it-the-reinvent-2026-community-track"]]
+};
+var CATALOG='https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=';
+function catLinks(codeStr){
+  return codeStr.split(' / ').map(function(c){
+    var base=c.trim().replace(/-R\d*$/,'');
+    return '<a class="catlink" href="'+CATALOG+base+'" target="_blank" rel="noopener">View in catalog ↗</a>';
+  }).join('');
+}
+var box=document.getElementById('themes');
+THEMES.forEach(function(th){
+  var sec=document.createElement('div');sec.className='theme';sec.dataset.theme=th.id;
+  var guides='';
+  if(GUIDES[th.id]){guides='<p class="guide-line">AWS track guide: '+GUIDES[th.id].map(function(g){return '<a href="'+g[1]+'" target="_blank" rel="noopener">'+g[0]+'</a>';}).join(' · ')+'</p>';}
+  var head='<div class="theme-head"><span class="theme-num">'+th.n+'</span><div><h3>'+th.t+'</h3><p>'+th.d+'</p>'+guides+'</div></div><div class="sess">';
+  th.items.forEach(function(it){
+    head+='<article class="s" data-must="'+it[2]+'"><span class="code">'+it[0]+'</span>'+(it[2]?' <span class="star" title="Must-book: interactive, not recorded">★ MUST-BOOK</span>':'')+'<h4>'+it[1]+'</h4><p>'+it[3]+'</p><div class="meta">'+(it[4]||'')+'</div><div>'+catLinks(it[0])+'</div></article>';
+  });
+  sec.innerHTML=head+'</div>';box.appendChild(sec);
+});
+var btns=document.querySelectorAll('.fbtn');
+btns.forEach(function(b){b.addEventListener('click',function(){
+  btns.forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');
+  var f=b.dataset.f;
+  document.querySelectorAll('.theme').forEach(function(t){
+    var show=(f==='all'||f===t.dataset.theme||f==='must');t.classList.toggle('hidden',!show);
+    t.querySelectorAll('.s').forEach(function(s){s.classList.toggle('hidden',f==='must'&&s.dataset.must!=='1')});
+  });
+});});
+</script>
+</body>
+</html>
