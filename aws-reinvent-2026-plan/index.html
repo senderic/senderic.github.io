@@ -74,6 +74,16 @@ tr:last-child td{border-bottom:none}
 .day h3 .when{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--accent);font-weight:600}
 .day p{margin:8px 0 0;font-size:.94rem}
 .day .alt{color:var(--muted);font-size:.9rem}
+/* walking routes */
+.routes{background:var(--teal-soft);border-radius:10px;padding:12px 14px;margin-top:14px}
+.routes h4{margin:0 0 4px;font-size:.88rem;font-weight:700;color:var(--accent2)}
+.routes ul{margin:4px 0 0;padding-left:18px}
+.routes li{margin:6px 0;font-size:.92rem}
+.routes li:first-child{margin-top:2px}
+.routes li:last-child{margin-bottom:2px}
+.orient{margin:0 0 18px}
+.orient h3{margin-bottom:4px}
+.orient .gran{font-size:.9rem;color:var(--muted);margin:0 0 6px}
 /* filters */
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;position:sticky;top:0;background:var(--bg);padding:12px 0;z-index:5}
 .fbtn{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 14px;font:inherit;font-size:.88rem;font-weight:600;cursor:pointer}
@@ -184,7 +194,7 @@ a.blk:hover{outline:2px solid var(--accent);outline-offset:1px}
     <div class="stat"><b>Dec 10</b><span>Concur deadline — Thu Dec 10, 2026, 6:00 PM CT: report submitted <em>and</em> manager-approved by then</span></div>
   </div>
   <nav class="toc" aria-label="On this page">
-    <a href="#status">Status &amp; action items</a><a href="#keynotes">Keynotes</a><a href="#days">Day-by-day plan</a><a href="#lane-charts">Week at a glance</a><a href="#recording">Recording workflow</a><a href="#sessions">Priority sessions</a><a href="#s3-lane">S3 Tables / Observability / Metadata</a><a href="#langchain-map">LangChain → AWS equivalents</a><a href="#formats">Formats &amp; recording</a><a href="#venues">Venues &amp; travel</a><a href="#playbook">Booking playbook</a><a href="#networking">Networking &amp; extras</a><a href="#gaps">Known gaps</a>
+    <a href="#status">Status &amp; action items</a><a href="#keynotes">Keynotes</a><a href="#days">Day-by-day plan</a><a href="#getting-around">Getting around</a><a href="#lane-charts">Week at a glance</a><a href="#recording">Recording workflow</a><a href="#sessions">Priority sessions</a><a href="#s3-lane">S3 Tables / Observability / Metadata</a><a href="#langchain-map">LangChain → AWS equivalents</a><a href="#formats">Formats &amp; recording</a><a href="#venues">Venues &amp; travel</a><a href="#playbook">Booking playbook</a><a href="#networking">Networking &amp; extras</a><a href="#gaps">Known gaps</a>
   </nav>
 </header>
 
@@ -241,10 +251,25 @@ a.blk:hover{outline:2px solid var(--accent);outline-offset:1px}
   <h2>Day-by-day plan — the final calendar (all walk-ups)</h2>
   <p class="lede">Exactly as favorited in the <a href="https://aws.amazon.com/events/reinvent/calendar/" target="_blank" rel="noopener">AWS re:Invent calendar</a>. Nothing here is reserved. Times are Pacific. Non-AWS events — team dinners, receptions, re:Play — are on the same days as the sessions, because that’s how the week actually runs.</p>
 
+  <div class="card orient" id="getting-around">
+    <h3>Getting around — venue orientation &amp; walking routes</h3>
+    <p class="gran"><strong>How precise can these routes be?</strong> Casinos don’t publish reliable turn-by-turn indoor directions, so the routes in each day below are given at building → floor → zone → landmark granularity, with walk times — that’s the level that actually holds up on the ground. For the last hundred feet, the <strong>AWS Events app</strong> has venue wayfinding and maps; use it as the on-the-ground backup.</p>
+    <ul class="tight">
+      <li><strong>MGM Grand Conference Center</strong> is its own building at the back (east) of the MGM casino. From the hotel: take the indoor walkway into the MGM Grand casino, then follow the overhead “Conference Center” signs east through the casino toward the Grand Garden Arena side — about <strong>10 minutes</strong> inside walking from the hotel lobby to the Conference Center doors. <strong>Room numbers give the floor: 1xx = Level 1, 3xx = Level 3.</strong> Escalators at the pre-function areas connect Levels 1–3. Boulevard rooms (158/163), Grand rooms (116) and meeting rooms 101–110 are Level 1; Chairman’s Ballroom (363) and rooms 350–354 are Level 3, in the newer east wing.</li>
+      <li><strong>Caesars Forum</strong> (behind the LINQ, 3911 Koval Ln) is <strong>all on one level</strong> — no stairs anywhere inside. Enter via the Entry Hall at the end of the LINQ Promenade (sky bridge side, from Harrah’s/The LINQ). Room numbers give the zone: <strong>1xx = Forum Ballroom side, 2xx = Summit side, 3xx = Alliance side, 4xx = Academy side</strong>; the main corridor runs the length of the building, so Forum 120 → Alliance 305 is a straight ~5-minute corridor walk.</li>
+      <li><strong>Caesars Palace</strong> is a different building from Caesars Forum (0.4 mi apart, ~10–15 min door to door: out the Palace main entrance, across Las Vegas Blvd, east through the LINQ Promenade). Inside the Palace, follow “Conference Center” signs to the conference center at the back of the property by the Garden of the Gods pools; the Augustus Ballroom is on the upper conference level (Emperors Level) and the Octavius Ballroom sections are on the Promenade Level, both reached by the conference center escalators.</li>
+      <li><strong>Wynn/Encore:</strong> Margaux is on Wynn’s convention floor (Floor 1), near the Lafite Ballroom. Brahms is on the <strong>Encore</strong> side — Encore’s composer-named meeting rooms (Brahms, Beethoven, Chopin) sit on Encore’s meeting level; from Wynn, walk the indoor Wynn–Encore connector corridor (~10 min inside). The portal labels both “Wynn.”</li>
+      <li><strong>Between venues:</strong> re:Invent shuttles and the Las Vegas Monorail are <strong>free with your badge</strong>. AWS’s rule: allow <strong>30–45 minutes</strong> between venues. MGM ↔ center cluster (Caesars) is ~20–25 min by shuttle; MGM ↔ north cluster (Venetian/Wynn) is 30+ min. The monorail’s MGM Grand station is on the east side of the property by the Conference Center; ride north to Harrah’s/The LINQ station (~10 min), then it’s a ~5-minute walk east through the LINQ Promenade to Caesars Forum’s Entry Hall, or cross to Caesars Palace from the Flamingo/Caesars Palace station.</li>
+    </ul>
+  </div>
+
   <div class="day"><h3>Sunday, Nov 29 <span class="when">ARRIVAL · NO SESSIONS</span></h3>
     <p><strong>4:30 PM — Land at LAS</strong> (WN51 from SAN). <strong>Badge at the baggage-claim kiosks</strong> on arrival; check in at the hotel. Swag pickup at MGM Grand if lines are short.</p>
     <p><strong>~5:00 PM — Team meetup: RockHouse</strong> (Canal Shoppes, Venetian) with the team for Sunday Night Football (kickoff 5:20 PM). Realistic arrival 6:00–6:30 PM after check-in / swag.</p>
-    <p class="alt">For completeness: a separate coworker watches the 1:25 PM 49ers–Seahawks game at TAP Sports Bar, MGM Grand — that’s pre-flight for you, not your plan.</p></div>
+    <p class="alt">For completeness: a separate coworker watches the 1:25 PM 49ers–Seahawks game at TAP Sports Bar, MGM Grand — that’s pre-flight for you, not your plan.</p>
+    <div class="routes"><h4>Walking route — getting to RockHouse</h4><ul>
+      <li>Sunday shuttles run limited routes (Caesars Forum / MGM / Venetian) until 8:30 PM, or take the monorail from the MGM Grand station to Harrah’s/The LINQ and walk into the Venetian. Inside the Venetian, the Canal Shoppes are on Level 2 — follow “Grand Canal Shoppes” signs up from the casino floor; RockHouse is on the canal level near the main shoppes entrance.</li>
+    </ul></div></div>
 
   <div class="day"><h3>Monday, Nov 30 <span class="when">MGM ANCHOR DAY · 6 FAVORITES</span></h3>
     <p><strong>10:00–11:00 — <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=AIM436" target="_blank" rel="noopener">AIM436-R</a></strong> · Chalk talk (400) · “Scale production agents reliably with AgentCore” · MGM Grand, Boulevard 163.</p>
@@ -254,7 +279,13 @@ a.blk:hover{outline:2px solid var(--accent);outline-offset:1px}
     <p><strong>1:30–2:30 — <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=AIM308" target="_blank" rel="noopener">AIM308-R</a></strong> · Builders’ session (300) · “Put your data to work: build a knowledge assistant on Amazon Bedrock” · Chairman’s 363.</p>
     <p class="alt"><strong>Fallback if the noon block collapses: <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG331" target="_blank" rel="noopener">STG331-R</a></strong> workshop — “Build a fully managed data lake with Amazon S3 Tables” (12:30–2:30, MGM Grand 116). It overlaps both anchors, so it’s an either/or, not an addition.</p>
     <p><strong>4:30–5:30 — <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP401" target="_blank" rel="noopener">COP401-R</a></strong> · Code talk · “Building eval-driven observability for AI agents” · Caesars Forum, Forum 120. Leave MGM ~4:00.</p>
-    <p><strong>Evening — Team dinner with Kathy</strong> (the dedicated AWS SA team; venue TBD, deliberately not near the Venetian). The Developer Keynote (7:30 PM) is skipped — it’s recorded; dinner wins. Kathy’s team also runs chalk talks and 45-minute briefs during the week — she’s the route to those.</p></div>
+    <p><strong>Evening — Team dinner with Kathy</strong> (the dedicated AWS SA team; venue TBD, deliberately not near the Venetian). The Developer Keynote (7:30 PM) is skipped — it’s recorded; dinner wins. Kathy’s team also runs chalk talks and 45-minute briefs during the week — she’s the route to those.</p>
+    <div class="routes"><h4>Walking routes — all MGM Conference Center until 4:30</h4><ul>
+      <li><strong>Hotel → AIM436-R:</strong> Hotel indoor walkway → MGM casino → follow “Conference Center” signs east (~10 min) → enter the Conference Center and <strong>stay on Level 1</strong> — Boulevard 163 is off the Level 1 pre-function corridor in the Boulevard Ballroom zone.</li>
+      <li><strong>Boulevard 163 → Chairman’s 363:</strong> take the pre-function <strong>escalators up two levels (1 → 3)</strong>; Chairman’s Ballroom is on Level 3 in the east wing — 363 is one of its sections. ~5 min. This is the 11:15 queue move.</li>
+      <li><strong>Chairman’s 363 → STG331-R fallback (Grand 116):</strong> escalators back down to Level 1; the Grand Ballroom sections (115–117) are on Level 1. ~5 min.</li>
+      <li><strong>Chairman’s 363 → COP401-R (Caesars Forum):</strong> leave MGM by 4:00. Fastest reliable route: walk to the <strong>MGM Grand monorail station</strong> (east side of the property, by the Conference Center), ride north to <strong>Harrah’s/The LINQ</strong> (~10 min), exit into the LINQ Promenade and walk east ~5 min to Caesars Forum’s Entry Hall; Forum 120 is off the main corridor on the Forum Ballroom side — all one level. The venue shuttle (~20–25 min) is the no-walking alternative. Budget 30–45 min total either way.</li>
+    </ul></div></div>
 
   <div class="day"><h3>Tuesday, Dec 1 <span class="when">CAESARS CLUSTER DAY · 4 FAVORITES</span></h3>
     <p><strong>8:30 AM–12:30 PM — <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=TNC325" target="_blank" rel="noopener">TNC325-R</a></strong> · Bootcamp (300) · “Building Advanced Agentic AI Systems on AWS” · Caesars Palace, Augustus Ballroom III. AgentCore, agent-as-tool, shared memory, tracing, eval frameworks — the manager’s theme in bootcamp form. <strong>Laptop required.</strong></p>
@@ -262,7 +293,14 @@ a.blk:hover{outline:2px solid var(--accent);outline-offset:1px}
     <p><strong>2:30–3:30 — <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=OPN309" target="_blank" rel="noopener">OPN309</a></strong> · Builders’ session (300) · “Defense in depth for Strands AI agents with Cedar, AgentCore, and Rex” · Caesars Forum, Forum 120.</p>
     <p><strong>3:30–4:30 — Open hour.</strong> Expo / Booth #1740, or overflow queues. Nothing on-theme fits this slot without colliding — it’s a built-in coffee / expo hour, not a miss.</p>
     <p><strong>4:30–5:30 — <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG348" target="_blank" rel="noopener">STG348-R</a></strong> · Chalk talk (300) · “Designing performant and cost-effective data lakes on Amazon S3 Tables” · Caesars Forum, Alliance 305.</p>
-    <p><strong>Evening — Team dinner at Nora’s</strong> (off-Strip).</p></div>
+    <p><strong>Evening — Team dinner at Nora’s</strong> (off-Strip).</p>
+    <div class="routes"><h4>Walking routes — Caesars cluster all day</h4><ul>
+      <li><strong>Hotel → TNC325-R (Caesars Palace, Augustus Ballroom III):</strong> leave MGM by ~7:45. Venue shuttle to Caesars Palace (~20–25 min), or monorail to the Flamingo/Caesars Palace station and cross into the Palace on the pedestrian bridge. Inside, follow “Conference Center” signs to the back of the property (Garden of the Gods pool side) and take the conference center escalators up — the Augustus Ballroom is on the upper conference level.</li>
+      <li><strong>Augustus Ballroom → COP319-R (Caesars Forum, Forum 120):</strong> out the Palace main entrance, cross Las Vegas Blvd, and walk east through the LINQ Promenade to Caesars Forum’s Entry Hall — ~10–15 min door to door. Forum 120 is off the main corridor; everything is one level.</li>
+      <li><strong>COP319-R → OPN309:</strong> same room (Forum 120) — no move.</li>
+      <li><strong>Forum 120 → STG348-R (Alliance 305):</strong> same building, same level — walk the main corridor the length of the building from the Forum Ballroom side to the Alliance Ballroom side; Alliance rooms are the 3xx series. ~5 min.</li>
+      <li><strong>Nora’s in the evening:</strong> rideshare/taxi from the Caesars Forum plaza — it’s off-Strip, don’t try to walk it.</li>
+    </ul></div></div>
 
   <div class="day"><h3>Wednesday, Dec 2 <span class="when">MANAGER-THEME DAY · LANE A + LANE B PIVOTS · 6 FAVORITES</span></h3>
     <p><strong>Lane A (plan of record, all MGM):</strong></p>
@@ -271,14 +309,26 @@ a.blk:hover{outline:2px solid var(--accent);outline-offset:1px}
     <p><strong>1:30–2:30 — <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=AIM407" target="_blank" rel="noopener">AIM407-R1</a></strong> · Builders’ session (400) · “Build a production multi-Agent Systems with Strands” · MGM Grand, Room 104. <strong>Laptop required.</strong></p>
     <p class="alt"><strong>Lane B pivot</strong> (use if Monday’s COP401 queue failed, or S3 hands-on outranks Strands that day): <strong><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG331" target="_blank" rel="noopener">STG331-R1</a></strong> workshop 12:00–2:00 at Wynn (Brahms 4) → <strong><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=COP401" target="_blank" rel="noopener">COP401-R1</a></strong> code talk 3:00–4:00 at Wynn (Margaux 1). Also on the page: <strong><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=AIM308" target="_blank" rel="noopener">AIM308-R1</a></strong> 1:00–2:00 MGM (only if Monday’s AIM308 was missed).</p>
     <p class="alt"><strong>Why Wednesday morning stays empty:</strong> every on-theme MGM session that morning ends at exactly 10:00, butting straight into STG324 — nothing ends by 9:45. The only earlier options were a Caesars lab and a sponsored Venetian talk. Wednesday starts at 10:00 on purpose.</p>
-    <p><strong>Evening — two options:</strong> SoftServe <strong>“Bella Notte” reception</strong> (register to hold the spot, decide later) <em>vs</em> the <strong>AWS Public Sector event</strong> (invite via the conference portal; Judy was getting you added after you were missed on the attendee list — receipt still unconfirmed).</p></div>
+    <p><strong>Evening — two options:</strong> SoftServe <strong>“Bella Notte” reception</strong> (register to hold the spot, decide later) <em>vs</em> the <strong>AWS Public Sector event</strong> (invite via the conference portal; Judy was getting you added after you were missed on the attendee list — receipt still unconfirmed).</p>
+    <div class="routes"><h4>Walking routes — Lane A never leaves MGM</h4><ul>
+      <li><strong>Hotel → STG324-R:</strong> same as Monday morning — Conference Center, <strong>Level 1</strong>, Boulevard 158.</li>
+      <li><strong>Boulevard 158 → ANT351 (Chairman’s 363):</strong> pre-function escalators <strong>up to Level 3</strong>, east wing. ~5 min.</li>
+      <li><strong>Chairman’s 363 → AIM407-R1 (Room 104):</strong> escalators <strong>down to Level 1</strong>; meeting rooms 101–110 line the Level 1 corridor at the opposite end from the ballrooms. ~5–7 min.</li>
+      <li><strong>Lane B pivot (Wynn):</strong> leave MGM by ~11:15 for a noon start — shuttle north (30+ min) or monorail + walk. STG331-R1 is in <strong>Brahms 4 on the Encore side</strong>: from the Wynn casino, walk the indoor Wynn–Encore connector and follow Encore’s “Meeting Rooms” signs to the composer-named rooms. COP401-R1 is back on the <strong>Wynn side in Margaux 1</strong> (convention floor, Floor 1, near the Lafite Ballroom) — retrace the connector, ~10 min inside. AIM308-R1, if used instead, is Chairman’s 363 back at MGM.</li>
+    </ul></div></div>
 
   <div class="day"><h3>Thursday, Dec 3 <span class="when">S3 MORNING, INSURANCE AFTERNOON · 4 FAVORITES</span></h3>
     <p><strong>8:30–9:30 — <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG335" target="_blank" rel="noopener">STG335-R1</a></strong> · Builders’ session (300) · “Build an AI-powered AWS Backup analyst and remediate with AgentCore” · MGM Grand, Chairman’s 363.</p>
     <p><strong>10:30–11:30 — <a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG306" target="_blank" rel="noopener">STG306</a></strong> · Breakout (300) · “Amazon S3 Tables: A deep dive into storage built for Apache Iceberg” · MGM Grand, Chairman’s 363.</p>
     <p><strong>Afternoon — pick by how Monday went (the two overlap; you can’t do both):</strong></p>
     <p class="alt">If AIM337 landed Monday: <strong><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=STG324" target="_blank" rel="noopener">STG324-R1</a></strong> · Chalk talk · 1:00–2:00 · Caesars Palace, Octavius 11.<br>If it didn’t: <strong><a class="code-link" href="https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=AIM337" target="_blank" rel="noopener">AIM337-R1</a></strong> · Code talk · 1:30–2:30 · MGM Grand, Chairman’s 363 — the second chance.</p>
-    <p><strong>Evening — re:Play</strong> (Allegiant Stadium, 6:30–10:30 PM) <em>vs</em> <strong>Golden Knights vs Utah Mammoth</strong> (7:00 PM, T-Mobile Arena; team tradition, tickets bought during the week). <strong>Pack for the 7:20 AM flight before going out.</strong></p></div>
+    <p><strong>Evening — re:Play</strong> (Allegiant Stadium, 6:30–10:30 PM) <em>vs</em> <strong>Golden Knights vs Utah Mammoth</strong> (7:00 PM, T-Mobile Arena; team tradition, tickets bought during the week). <strong>Pack for the 7:20 AM flight before going out.</strong></p>
+    <div class="routes"><h4>Walking routes</h4><ul>
+      <li><strong>STG335-R1 → STG306:</strong> both are in <strong>Chairman’s 363</strong> — no move. Kill the 9:30–10:30 gap on Level 3; the Level 3 pre-function has amphitheater-style seating with power for laptop work.</li>
+      <li><strong>Chairman’s 363 → STG324-R1 (Caesars Palace, Octavius 11):</strong> same cross-venue move as Tuesday — shuttle (~20–25 min) or monorail to Flamingo/Caesars Palace; inside the Palace conference center, the Octavius sections are on the <strong>Promenade Level</strong>. Leave MGM by ~12:15.</li>
+      <li><strong>Chairman’s 363 → AIM337-R1:</strong> same room — no move. (The two afternoon options overlap; pick one based on Monday.)</li>
+      <li><strong>Evening:</strong> re:Play runs <strong>dedicated shuttles from the venues starting 6:15 PM</strong> — don’t walk to Allegiant. T-Mobile Arena is the walkable option: ~10 min west of MGM Grand through The Park.</li>
+    </ul></div></div>
 
   <div class="day"><h3>Friday, Dec 4 <span class="when">TRAVEL DAY · NO SESSIONS</span></h3>
     <p><strong>~5:45 AM — Leave the hotel;</strong> express / mobile checkout; gate by ~6:50 AM via TSA PreCheck. <strong>7:20 AM — WN1006 LAS → SAN</strong>, lands ~8:30 AM. No sessions — Friday is yours at home.</p></div>
